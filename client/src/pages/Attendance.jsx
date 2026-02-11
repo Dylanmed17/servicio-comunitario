@@ -38,14 +38,14 @@ const Attendance = () => {
                 <CardContent>
                     <form onSubmit={handleAttendance} className="space-y-4">
                         <div className="space-y-2">
-                            <Label htmlFor="cedula">Ingrese su Cédula</Label>
+                            <Label htmlFor="cedula" className="text-md">Ingrese su Cédula</Label>
                             <Input
                                 id="cedula"
                                 type="text"
                                 placeholder="V-12345678"
                                 value={cedula}
                                 onChange={(e) => setCedula(e.target.value)}
-                                className="text-lg py-6"
+                                className="text-md py-6"
                                 autoFocus
                             />
                         </div>
