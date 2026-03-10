@@ -5,23 +5,32 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { LayoutDashboard, Users, LogOut, Clock, CalendarDays, List, LayoutGrid } from 'lucide-react';
+import { LayoutDashboard, Users, LogOut, Clock, CalendarDays, List, LayoutGrid, Search } from 'lucide-react';
 
 const Dashboard = () => {
     const navigate = useNavigate();
-    const [stats, setStats] = useState({ total: 0, present: 0, absent: 0 });
+    const [stats, setStats] = useState({ total: 0, present: 0, absent: 0, retrasos: 0 });
     const [personnel, setPersonnel] = useState([]);
     
     // UI State
-    const [activeTab, setActiveTab] = useState('monitoreo'); // 'monitoreo' or 'personal'
+    const [activeTab, setActiveTab] = useState('monitoreo'); // 'monitoreo', 'personal', 'historial'
     const [monitoringView, setMonitoringView] = useState('timeline'); // 'timeline' or 'table'
 
     // Form State (Personnel CRUD)
     const [formData, setFormData] = useState({ id: null, cedula: '', nombre: '', apellido: '', cargo: '', telefono: '' });
     const [isEditing, setIsEditing] = useState(false);
     
-    // Mock Data for Timeline until backend is ready
+    // Timeline State
     const [attendances, setAttendances] = useState([]);
+
+    // History State
+    const [history, setHistory] = useState([]);
+    const [historyFilters, setHistoryFilters] = useState({
+        startDate: '2026-03-01', // Default for seed data visibility
+        endDate: '2026-03-09',
+        cedula: '',
+        estado: 'Todos'
+    });
 
     const token = localStorage.getItem('token');
     const authHeader = { headers: { Authorization: `Bearer ${token}` } };
@@ -29,10 +38,8 @@ const Dashboard = () => {
     useEffect(() => {
         fetchStats();
         fetchPersonnel();
-        // Here we will eventually fetch today's attendances
-        setAttendances([
-            { id: 1, nombre: 'Admin Seed', hora: '07:05 AM', estado: 'A tiempo', tipo: 'Entrada' }
-        ]);
+        fetchAttendances();
+        fetchHistory(); // Base fetch
     }, []);
 
     const fetchStats = async () => {
@@ -42,6 +49,25 @@ const Dashboard = () => {
         } catch (error) {
             console.error(error);
             if (error.response?.status === 401) handleLogout();
+        }
+    };
+
+    const fetchAttendances = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/api/dashboard/attendances/today', authHeader);
+            setAttendances(res.data);
+        } catch (error) {
+            console.error('Error fetching attendances:', error);
+        }
+    };
+
+    const fetchHistory = async () => {
+        try {
+            const params = new URLSearchParams(historyFilters).toString();
+            const res = await axios.get(`http://localhost:3000/api/dashboard/attendances/history?${params}`, authHeader);
+            setHistory(res.data);
+        } catch (error) {
+            console.error('Error fetching history:', error);
         }
     };
 
@@ -94,21 +120,31 @@ const Dashboard = () => {
         }
     };
 
+    // --- History Filter Handlers ---
+    const handleFilterChange = (e) => {
+        setHistoryFilters({ ...historyFilters, [e.target.name]: e.target.value });
+    };
+
+    const submitFilter = (e) => {
+        e.preventDefault();
+        fetchHistory();
+    }
+
     // --- Sub-components for Views ---
 
     const renderMonitoreo = () => (
         <div className="space-y-6">
             <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border">
                 <div>
-                    <h2 className="text-xl font-bold text-gray-800">Monitoreo en Vivo</h2>
-                    <p className="text-sm text-gray-500">Registro de entradas y salidas del día de hoy.</p>
+                    <h2 className="text-xl font-bold text-gray-800">Monitoreo en Vivo (Hoy)</h2>
+                    <p className="text-sm text-gray-500">Registro de entradas y salidas del día.</p>
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-100 p-1 rounded-lg">
                     <Button 
                         variant={monitoringView === 'timeline' ? 'default' : 'ghost'} 
                         size="sm" 
                         onClick={() => setMonitoringView('timeline')}
-                        className={monitoringView === 'timeline' ? 'bg-[#ED1C24] hover:bg-[#c4161c]' : 'text-gray-500'}
+                        className={monitoringView === 'timeline' ? 'bg-[#ED1C24] hover:bg-[#c4161c] text-white' : 'text-gray-500'}
                     >
                         <LayoutGrid className="w-4 h-4 mr-2" />
                         Timeline
@@ -117,7 +153,7 @@ const Dashboard = () => {
                         variant={monitoringView === 'table' ? 'default' : 'ghost'} 
                         size="sm" 
                         onClick={() => setMonitoringView('table')}
-                        className={monitoringView === 'table' ? 'bg-[#ED1C24] hover:bg-[#c4161c]' : 'text-gray-500'}
+                        className={monitoringView === 'table' ? 'bg-[#ED1C24] hover:bg-[#c4161c] text-white' : 'text-gray-500'}
                     >
                         <List className="w-4 h-4 mr-2" />
                         Tabla
@@ -128,10 +164,10 @@ const Dashboard = () => {
             {monitoringView === 'timeline' ? (
                 <div className="grid gap-4">
                     {attendances.map((att) => (
-                        <Card key={att.id} className="border-l-4 border-l-green-500">
-                            <CardContent className="p-4 flex items-center justify-between">
+                        <Card key={att.id} className={`border-l-4 ${att.estado === 'Retraso' ? 'border-l-yellow-500' : att.estado === 'Reposo Médico' ? 'border-l-blue-500' : 'border-l-green-500'}`}>
+                            <CardContent className="p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-600">
+                                    <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-600 shrink-0">
                                         {att.nombre.substring(0, 2).toUpperCase()}
                                     </div>
                                     <div>
@@ -139,11 +175,18 @@ const Dashboard = () => {
                                         <p className="text-sm text-gray-500">Marcó {att.tipo}</p>
                                     </div>
                                 </div>
-                                <div className="text-right">
+                                <div className="text-left md:text-right">
                                     <p className="font-bold text-lg">{att.hora}</p>
-                                    <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
-                                        {att.estado}
-                                    </span>
+                                    <div className="flex space-x-2 mt-1">
+                                        <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${
+                                            att.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' : 
+                                            att.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' : 
+                                            'bg-green-100 text-green-800'
+                                        }`}>
+                                            {att.estado}
+                                        </span>
+                                        {att.observaciones && <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{att.observaciones}</span>}
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
@@ -162,6 +205,7 @@ const Dashboard = () => {
                                     <th className="px-4 py-3">Tipo</th>
                                     <th className="px-4 py-3">Hora</th>
                                     <th className="px-4 py-3">Estado</th>
+                                    <th className="px-4 py-3">Observaciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,8 +215,11 @@ const Dashboard = () => {
                                         <td className="px-4 py-3">{att.tipo}</td>
                                         <td className="px-4 py-3 font-mono">{att.hora}</td>
                                         <td className="px-4 py-3">
-                                            <span className="text-green-600 font-medium">{att.estado}</span>
+                                            <span className={`${att.estado === 'Retraso' ? 'text-yellow-600' : att.estado === 'Reposo Médico' ? 'text-blue-600' : 'text-green-600'} font-medium`}>
+                                                {att.estado}
+                                            </span>
                                         </td>
+                                        <td className="px-4 py-3 text-gray-500 text-xs">{att.observaciones}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -180,6 +227,93 @@ const Dashboard = () => {
                     </div>
                 </Card>
             )}
+        </div>
+    );
+
+    const renderHistorial = () => (
+        <div className="space-y-6">
+            <Card className="shadow-sm border-t-4 border-t-gray-800">
+                <CardHeader className="pb-4">
+                    <CardTitle className="text-lg">Filtros de Búsqueda</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <form onSubmit={submitFilter} className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+                        <div>
+                            <Label htmlFor="startDate">Desde</Label>
+                            <Input type="date" name="startDate" value={historyFilters.startDate} onChange={handleFilterChange} />
+                        </div>
+                        <div>
+                            <Label htmlFor="endDate">Hasta</Label>
+                            <Input type="date" name="endDate" value={historyFilters.endDate} onChange={handleFilterChange} />
+                        </div>
+                        <div>
+                            <Label htmlFor="cedula">Cédula del Prof.</Label>
+                            <Input type="text" name="cedula" value={historyFilters.cedula} onChange={handleFilterChange} placeholder="Ej. 12325158" />
+                        </div>
+                        <div>
+                            <Label htmlFor="estado">Estado</Label>
+                            <select 
+                                name="estado" 
+                                value={historyFilters.estado} 
+                                onChange={handleFilterChange}
+                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                                <option value="Todos">Todos</option>
+                                <option value="A tiempo">A tiempo</option>
+                                <option value="Retraso">Retraso</option>
+                                <option value="Reposo Médico">Reposo Médico</option>
+                            </select>
+                        </div>
+                        <div>
+                            <Button type="submit" className="w-full bg-gray-800 hover:bg-gray-900 text-white">
+                                <Search className="w-4 h-4 mr-2" /> Buscar
+                            </Button>
+                        </div>
+                    </form>
+                </CardContent>
+            </Card>
+
+            <Card>
+                <div className="overflow-x-auto">
+                    <table className="w-full text-sm text-left">
+                        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                            <tr>
+                                <th className="px-4 py-3 border-b">Fecha</th>
+                                <th className="px-4 py-3 border-b">Cédula</th>
+                                <th className="px-4 py-3 border-b">Nombre</th>
+                                <th className="px-4 py-3 border-b">H. Entrada</th>
+                                <th className="px-4 py-3 border-b">H. Salida</th>
+                                <th className="px-4 py-3 border-b">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {history.length === 0 ? (
+                                <tr><td colSpan="6" className="text-center py-8 text-gray-500">No se encontraron registros.</td></tr>
+                            ) : (
+                                history.map((record) => (
+                                    <tr key={record.id} className="border-b hover:bg-gray-50">
+                                        <td className="px-4 py-3 font-mono">{record.fecha}</td>
+                                        <td className="px-4 py-3">{record.cedula}</td>
+                                        <td className="px-4 py-3 font-medium">{record.nombre}</td>
+                                        <td className="px-4 py-3 font-mono">{record.hora_entrada || '--:--'}</td>
+                                        <td className="px-4 py-3 font-mono">{record.hora_salida || '--:--'}</td>
+                                        <td className="px-4 py-3">
+                                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold
+                                                ${record.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' : 
+                                                record.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' : 
+                                                'bg-green-100 text-green-800'}
+                                            `}>
+                                                {record.estado}
+                                            </span>
+                                            {record.observaciones && <p className="text-xs text-gray-500 mt-1">{record.observaciones}</p>}
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </Card>
         </div>
     );
 
@@ -212,7 +346,7 @@ const Dashboard = () => {
                             <Input name="telefono" value={formData.telefono} onChange={handleInputChange} placeholder="0414-1234567" />
                         </div>
                         <div className="flex gap-2">
-                            <Button type="submit" className="w-full bg-[#ED1C24] hover:bg-[#c4161c]">{isEditing ? 'Actualizar' : 'Guardar'}</Button>
+                            <Button type="submit" className="w-full bg-[#ED1C24] hover:bg-[#c4161c] text-white">{isEditing ? 'Actualizar' : 'Guardar'}</Button>
                             {isEditing && (
                                 <Button type="button" variant="outline" onClick={() => { setIsEditing(false); setFormData({ id: null, cedula: '', nombre: '', apellido: '', cargo: '', telefono: '' }); }}>
                                     Cancelar
@@ -285,20 +419,20 @@ const Dashboard = () => {
                         Monitoreo en Vivo
                     </Button>
                     <Button 
+                        variant={activeTab === 'historial' ? 'secondary' : 'ghost'} 
+                        className={`w-full justify-start ${activeTab === 'historial' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'text-gray-600'}`}
+                        onClick={() => setActiveTab('historial')}
+                    >
+                        <CalendarDays className="mr-3 h-5 w-5" />
+                        Historial y Reportes
+                    </Button>
+                    <Button 
                         variant={activeTab === 'personal' ? 'secondary' : 'ghost'} 
                         className={`w-full justify-start ${activeTab === 'personal' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'text-gray-600'}`}
                         onClick={() => setActiveTab('personal')}
                     >
                         <Users className="mr-3 h-5 w-5" />
                         Gestión de Personal
-                    </Button>
-                    <Button 
-                        variant="ghost" 
-                        disabled
-                        className="w-full justify-start text-gray-400"
-                    >
-                        <CalendarDays className="mr-3 h-5 w-5" />
-                        Historial (Próximamente)
                     </Button>
                 </div>
 
@@ -312,8 +446,6 @@ const Dashboard = () => {
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col overflow-hidden">
-                {/* Topbar for mobile could go here */}
-                
                 <div className="flex-1 overflow-y-auto p-6 md:p-8">
                     <div className="max-w-6xl mx-auto space-y-8">
                         
@@ -342,7 +474,7 @@ const Dashboard = () => {
                                 <Card className="shadow-sm border-none bg-gradient-to-br from-yellow-50 to-white">
                                     <CardContent className="p-6">
                                         <p className="text-sm font-medium text-yellow-600">Retrasos Hoy</p>
-                                        <h3 className="text-3xl font-bold text-yellow-700 mt-2">--</h3>
+                                        <h3 className="text-3xl font-bold text-yellow-700 mt-2">{stats.retrasos}</h3>
                                     </CardContent>
                                 </Card>
                             </div>
@@ -351,6 +483,7 @@ const Dashboard = () => {
                         {/* Dynamic View Content */}
                         <div className="mt-8">
                             {activeTab === 'monitoreo' && renderMonitoreo()}
+                            {activeTab === 'historial' && renderHistorial()}
                             {activeTab === 'personal' && renderPersonal()}
                         </div>
 

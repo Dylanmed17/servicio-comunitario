@@ -1,0 +1,1582 @@
+-- Script Semilla para Sistema de Asistencia
+-- Generado: 9 de Marzo de 2026
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE asistencias;
+TRUNCATE TABLE horarios;
+TRUNCATE TABLE profesores;
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- INSERTANDO PROFESORES Y HORARIOS
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (1, 'V-10665895', 'Victor', 'Romero', 'Docente', '0414-5497908');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (1, 'Lunes', '07:00:00', '13:00:00'),
+    (1, 'Martes', '07:00:00', '13:00:00'),
+    (1, 'Miercoles', '07:00:00', '13:00:00'),
+    (1, 'Jueves', '07:00:00', '13:00:00'),
+    (1, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (2, 'V-11475613', 'Teresa', 'Gomez', 'Docente', '0414-1163569');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (2, 'Lunes', '07:00:00', '13:00:00'),
+    (2, 'Martes', '07:00:00', '13:00:00'),
+    (2, 'Miercoles', '07:00:00', '13:00:00'),
+    (2, 'Jueves', '07:00:00', '13:00:00'),
+    (2, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (3, 'V-14303670', 'Jose', 'Herrera', 'Docente', '0414-3689428');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (3, 'Lunes', '07:00:00', '13:00:00'),
+    (3, 'Martes', '07:00:00', '13:00:00'),
+    (3, 'Miercoles', '07:00:00', '13:00:00'),
+    (3, 'Jueves', '07:00:00', '13:00:00'),
+    (3, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (4, 'V-11129447', 'Elena', 'Fernandez', 'Docente', '0414-6331901');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (4, 'Lunes', '07:00:00', '13:00:00'),
+    (4, 'Martes', '07:00:00', '13:00:00'),
+    (4, 'Miercoles', '07:00:00', '13:00:00'),
+    (4, 'Jueves', '07:00:00', '13:00:00'),
+    (4, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (5, 'V-14035461', 'Fernando', 'Torres', 'Docente', '0414-8202805');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (5, 'Lunes', '07:00:00', '13:00:00'),
+    (5, 'Martes', '07:00:00', '13:00:00'),
+    (5, 'Miercoles', '07:00:00', '13:00:00'),
+    (5, 'Jueves', '07:00:00', '13:00:00'),
+    (5, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (6, 'V-13811154', 'Teresa', 'Ruiz', 'Docente', '0414-1396460');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (6, 'Lunes', '07:00:00', '13:00:00'),
+    (6, 'Martes', '07:00:00', '13:00:00'),
+    (6, 'Miercoles', '07:00:00', '13:00:00'),
+    (6, 'Jueves', '07:00:00', '13:00:00'),
+    (6, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (7, 'V-11437448', 'Jose', 'Garcia', 'Docente', '0414-2386712');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (7, 'Lunes', '07:00:00', '13:00:00'),
+    (7, 'Martes', '07:00:00', '13:00:00'),
+    (7, 'Miercoles', '07:00:00', '13:00:00'),
+    (7, 'Jueves', '07:00:00', '13:00:00'),
+    (7, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (8, 'V-15016499', 'Carmen', 'Vargas', 'Docente', '0414-9166902');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (8, 'Lunes', '07:00:00', '13:00:00'),
+    (8, 'Martes', '07:00:00', '13:00:00'),
+    (8, 'Miercoles', '07:00:00', '13:00:00'),
+    (8, 'Jueves', '07:00:00', '13:00:00'),
+    (8, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (9, 'V-13621244', 'Luis', 'Suarez', 'Docente', '0414-6610165');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (9, 'Lunes', '07:00:00', '13:00:00'),
+    (9, 'Martes', '07:00:00', '13:00:00'),
+    (9, 'Miercoles', '07:00:00', '13:00:00'),
+    (9, 'Jueves', '07:00:00', '13:00:00'),
+    (9, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (10, 'V-11056852', 'Maria', 'Herrera', 'Docente', '0414-8728324');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (10, 'Lunes', '07:00:00', '13:00:00'),
+    (10, 'Martes', '07:00:00', '13:00:00'),
+    (10, 'Miercoles', '07:00:00', '13:00:00'),
+    (10, 'Jueves', '07:00:00', '13:00:00'),
+    (10, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (11, 'V-11506451', 'Fernando', 'Herrera', 'Docente', '0414-7419220');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (11, 'Lunes', '07:00:00', '13:00:00'),
+    (11, 'Martes', '07:00:00', '13:00:00'),
+    (11, 'Miercoles', '07:00:00', '13:00:00'),
+    (11, 'Jueves', '07:00:00', '13:00:00'),
+    (11, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (12, 'V-15869711', 'Ana', 'Lopez', 'Docente', '0414-1263848');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (12, 'Lunes', '07:00:00', '13:00:00'),
+    (12, 'Martes', '07:00:00', '13:00:00'),
+    (12, 'Miercoles', '07:00:00', '13:00:00'),
+    (12, 'Jueves', '07:00:00', '13:00:00'),
+    (12, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (13, 'V-15686590', 'Manuel', 'Alvarez', 'Docente', '0414-6530015');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (13, 'Lunes', '07:00:00', '13:00:00'),
+    (13, 'Martes', '07:00:00', '13:00:00'),
+    (13, 'Miercoles', '07:00:00', '13:00:00'),
+    (13, 'Jueves', '07:00:00', '13:00:00'),
+    (13, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (14, 'V-12536952', 'Andrea', 'Rodriguez', 'Docente', '0414-7998688');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (14, 'Lunes', '07:00:00', '13:00:00'),
+    (14, 'Martes', '07:00:00', '13:00:00'),
+    (14, 'Miercoles', '07:00:00', '13:00:00'),
+    (14, 'Jueves', '07:00:00', '13:00:00'),
+    (14, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (15, 'V-15289835', 'Carlos', 'Gonzalez', 'Docente', '0414-6245580');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (15, 'Lunes', '07:00:00', '13:00:00'),
+    (15, 'Martes', '07:00:00', '13:00:00'),
+    (15, 'Miercoles', '07:00:00', '13:00:00'),
+    (15, 'Jueves', '07:00:00', '13:00:00'),
+    (15, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (16, 'V-13931303', 'Andrea', 'Suarez', 'Docente', '0414-8675194');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (16, 'Lunes', '07:00:00', '13:00:00'),
+    (16, 'Martes', '07:00:00', '13:00:00'),
+    (16, 'Miercoles', '07:00:00', '13:00:00'),
+    (16, 'Jueves', '07:00:00', '13:00:00'),
+    (16, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (17, 'V-14404200', 'Alejandro', 'Herrera', 'Docente', '0414-8314859');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (17, 'Lunes', '07:00:00', '13:00:00'),
+    (17, 'Martes', '07:00:00', '13:00:00'),
+    (17, 'Miercoles', '07:00:00', '13:00:00'),
+    (17, 'Jueves', '07:00:00', '13:00:00'),
+    (17, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (18, 'V-15985337', 'Isabel', 'Mendez', 'Docente', '0414-3370846');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (18, 'Lunes', '07:00:00', '13:00:00'),
+    (18, 'Martes', '07:00:00', '13:00:00'),
+    (18, 'Miercoles', '07:00:00', '13:00:00'),
+    (18, 'Jueves', '07:00:00', '13:00:00'),
+    (18, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (19, 'V-13406023', 'Andres', 'Garcia', 'Docente', '0414-2252567');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (19, 'Lunes', '07:00:00', '13:00:00'),
+    (19, 'Martes', '07:00:00', '13:00:00'),
+    (19, 'Miercoles', '07:00:00', '13:00:00'),
+    (19, 'Jueves', '07:00:00', '13:00:00'),
+    (19, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (20, 'V-12325158', 'Patricia', 'Sanchez', 'Docente', '0414-6690553');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (20, 'Lunes', '07:00:00', '13:00:00'),
+    (20, 'Martes', '07:00:00', '13:00:00'),
+    (20, 'Miercoles', '07:00:00', '13:00:00'),
+    (20, 'Jueves', '07:00:00', '13:00:00'),
+    (20, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (21, 'V-15606510', 'Jorge', 'Sanchez', 'Docente', '0414-7031853');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (21, 'Lunes', '07:00:00', '13:00:00'),
+    (21, 'Martes', '07:00:00', '13:00:00'),
+    (21, 'Miercoles', '07:00:00', '13:00:00'),
+    (21, 'Jueves', '07:00:00', '13:00:00'),
+    (21, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (22, 'V-14104001', 'Sofia', 'Rodriguez', 'Docente', '0414-2417627');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (22, 'Lunes', '07:00:00', '13:00:00'),
+    (22, 'Martes', '07:00:00', '13:00:00'),
+    (22, 'Miercoles', '07:00:00', '13:00:00'),
+    (22, 'Jueves', '07:00:00', '13:00:00'),
+    (22, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (23, 'V-14014760', 'Luis', 'Mendez', 'Docente', '0414-5177919');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (23, 'Lunes', '07:00:00', '13:00:00'),
+    (23, 'Martes', '07:00:00', '13:00:00'),
+    (23, 'Miercoles', '07:00:00', '13:00:00'),
+    (23, 'Jueves', '07:00:00', '13:00:00'),
+    (23, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (24, 'V-11160930', 'Lucia', 'Ruiz', 'Docente', '0414-9212958');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (24, 'Lunes', '07:00:00', '13:00:00'),
+    (24, 'Martes', '07:00:00', '13:00:00'),
+    (24, 'Miercoles', '07:00:00', '13:00:00'),
+    (24, 'Jueves', '07:00:00', '13:00:00'),
+    (24, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (25, 'V-13247626', 'Gabriel', 'Vargas', 'Docente', '0414-1656922');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (25, 'Lunes', '07:00:00', '13:00:00'),
+    (25, 'Martes', '07:00:00', '13:00:00'),
+    (25, 'Miercoles', '07:00:00', '13:00:00'),
+    (25, 'Jueves', '07:00:00', '13:00:00'),
+    (25, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (26, 'V-10055401', 'Ana', 'Martinez', 'Docente', '0414-2644430');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (26, 'Lunes', '07:00:00', '13:00:00'),
+    (26, 'Martes', '07:00:00', '13:00:00'),
+    (26, 'Miercoles', '07:00:00', '13:00:00'),
+    (26, 'Jueves', '07:00:00', '13:00:00'),
+    (26, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (27, 'V-14578931', 'Jorge', 'Romero', 'Docente', '0414-3161467');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (27, 'Lunes', '07:00:00', '13:00:00'),
+    (27, 'Martes', '07:00:00', '13:00:00'),
+    (27, 'Miercoles', '07:00:00', '13:00:00'),
+    (27, 'Jueves', '07:00:00', '13:00:00'),
+    (27, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (28, 'V-10786668', 'Maria', 'Herrera', 'Docente', '0414-5811632');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (28, 'Lunes', '07:00:00', '13:00:00'),
+    (28, 'Martes', '07:00:00', '13:00:00'),
+    (28, 'Miercoles', '07:00:00', '13:00:00'),
+    (28, 'Jueves', '07:00:00', '13:00:00'),
+    (28, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (29, 'V-14531541', 'Alejandro', 'Suarez', 'Docente', '0414-2263764');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (29, 'Lunes', '07:00:00', '13:00:00'),
+    (29, 'Martes', '07:00:00', '13:00:00'),
+    (29, 'Miercoles', '07:00:00', '13:00:00'),
+    (29, 'Jueves', '07:00:00', '13:00:00'),
+    (29, 'Viernes', '07:00:00', '13:00:00');
+INSERT INTO profesores (ID, Cedula, Nombre, Apellido, Cargo, Telefono) VALUES (30, 'V-10400413', 'Lucia', 'Suarez', 'Docente', '0414-7724987');
+INSERT INTO horarios (ID_Profesor, Dia_Semana, Entrada_Asignada, Salida_Asignada) VALUES 
+    (30, 'Lunes', '07:00:00', '13:00:00'),
+    (30, 'Martes', '07:00:00', '13:00:00'),
+    (30, 'Miercoles', '07:00:00', '13:00:00'),
+    (30, 'Jueves', '07:00:00', '13:00:00'),
+    (30, 'Viernes', '07:00:00', '13:00:00');
+
+-- INSERTANDO ASISTENCIAS HISTÓRICAS (Enero - Marzo 2026)
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-01', '06:58:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-01', '07:06:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-01', '06:53:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-01', '06:49:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-01', '06:58:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-01', '06:40:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-01', '06:48:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-01', '06:45:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-01', '07:15:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-01', '06:54:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-01', '06:51:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-01', '06:49:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-01', '06:53:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-01', '06:49:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-01', '06:45:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-01', '06:54:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-01', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-01', '06:44:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-01', '06:57:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-01', '06:44:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-01', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-01', '06:44:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-01', '06:45:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-01', '06:58:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-01', '06:43:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-01', '06:40:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-01', '06:41:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-01', '07:02:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-01', '06:45:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-02', '06:51:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-02', '07:05:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-02', '06:51:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-02', '06:52:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-02', '06:45:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-02', '07:07:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-02', '06:46:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-02', '06:54:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-02', '07:20:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-02', '06:52:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-02', '06:50:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-02', '06:43:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-02', '06:50:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-02', '06:40:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-02', '06:45:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-02', '06:51:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-02', '06:46:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-02', '06:49:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-02', '06:40:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-02', '06:51:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-02', '06:46:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-02', '06:55:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-02', '06:57:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-02', '07:20:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-02', '06:48:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-02', '06:47:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-05', '06:46:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-05', '06:43:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-05', '06:57:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-05', '06:57:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-05', '06:59:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-05', '06:52:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-05', '07:10:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-05', '06:54:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-05', '06:54:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-05', '06:56:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-05', '06:40:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-05', '06:47:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-05', '06:57:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-05', '06:55:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-05', '06:42:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-05', '06:57:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-05', '06:45:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-05', '06:40:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-05', '06:47:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-05', '06:40:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-05', '06:41:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-05', '06:50:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-05', '06:55:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-05', '06:40:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-05', '07:19:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-05', '06:57:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-05', '07:01:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-05', '07:12:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-05', '06:47:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-05', '07:13:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-06', '06:40:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-06', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-06', '06:56:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-06', '06:44:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-06', '06:51:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-06', '06:42:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-06', '06:48:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-06', '06:58:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-06', '06:50:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-06', '07:10:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-06', '06:49:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-06', '06:43:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-06', '06:53:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-06', '07:09:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-06', '06:50:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-06', '06:58:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-06', '07:10:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-06', '06:55:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-06', '06:49:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-06', '06:43:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-06', '06:46:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-06', '06:51:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-06', '07:16:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-06', '06:59:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-06', '07:12:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-06', '06:41:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-06', '06:56:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-06', '06:53:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-06', '06:56:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-06', '06:50:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-07', '06:43:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-07', '06:53:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-07', '07:14:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-07', '06:41:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-07', '06:41:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-07', '06:51:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-07', '06:49:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-07', '06:52:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-07', '06:59:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-07', '06:53:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-07', '07:19:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-07', '06:55:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-07', '06:51:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-07', '06:46:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-07', '06:43:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-07', '06:43:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-07', '06:49:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-07', '06:40:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-07', '06:52:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-07', '06:40:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-07', '06:46:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-07', '06:49:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-07', '06:47:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-07', '06:55:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-07', '06:40:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-07', '06:47:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-07', '07:11:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-08', '06:43:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-08', '06:42:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-08', '06:48:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-08', '06:57:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-08', '06:49:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-08', '06:45:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-08', '06:50:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-08', '07:18:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-08', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-08', '06:57:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-08', '06:40:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-08', '06:45:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-08', '06:49:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-08', '06:56:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-08', '06:40:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-08', '06:48:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-08', '07:11:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-08', '06:49:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-08', '06:41:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-08', '06:53:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-08', '06:53:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-08', '06:53:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-08', '06:40:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-08', '06:43:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-08', '06:42:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-08', '06:56:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-08', '07:05:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-08', '06:46:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-08', '06:53:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-09', '07:04:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-09', '06:41:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-09', '06:51:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-09', '06:59:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-09', '07:05:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-09', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-09', '06:47:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-09', '06:45:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-09', '06:58:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-09', '06:46:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-09', '06:44:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-09', '06:45:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-09', '06:56:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-09', '06:54:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-09', '06:49:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-09', '07:07:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-09', '07:11:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-09', '06:53:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-09', '06:40:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-09', '06:54:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-09', '06:51:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-09', '06:47:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-09', '06:59:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-09', '07:09:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-09', '06:56:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-09', '06:58:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-09', '06:40:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-09', '07:11:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-09', '06:57:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-12', '06:54:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-12', '06:43:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-12', '06:51:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-12', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-12', '06:53:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-12', '06:46:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-12', '07:01:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-12', '06:49:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-12', '06:49:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-12', '07:18:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-12', '06:43:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-12', '07:11:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-12', '06:54:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-12', '06:50:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-12', '07:10:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-12', '06:59:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-12', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-12', '06:54:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-12', '06:56:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-12', '06:51:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-12', '07:08:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-12', '06:56:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-12', '07:20:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-12', '06:59:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-12', '06:55:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-12', '07:14:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-12', '07:04:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-12', '06:43:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-13', '06:44:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-13', '06:55:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-13', '06:58:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-13', '06:41:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-13', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-13', '06:57:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-13', '06:49:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-13', '06:52:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-13', '06:59:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-13', '06:58:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-13', '06:49:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-13', '06:44:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-13', '06:53:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-13', '06:57:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-13', '07:02:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-13', '06:40:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-13', '06:49:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-13', '07:01:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-13', '06:57:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-13', '06:51:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-13', '06:54:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-13', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-13', '07:20:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-13', '06:49:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-13', '06:58:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-13', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-13', '06:43:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-13', '06:44:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-13', '06:41:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-14', '06:55:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-14', '06:45:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-14', '06:42:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-14', '06:49:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-14', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-14', '07:16:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-14', '06:42:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-14', '06:54:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-14', '06:49:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-14', '06:55:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-14', '06:58:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-14', '06:46:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-14', '06:52:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-14', '06:48:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-14', '06:45:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-14', '07:13:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-14', '07:13:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-14', '06:53:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-14', '06:52:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-14', '06:51:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-14', '06:47:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-14', '06:51:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-14', '07:16:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-14', '06:46:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-14', '06:58:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-14', '06:46:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-14', '06:48:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-14', '06:50:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-15', '07:16:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-15', '07:16:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-15', '07:14:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-15', '06:42:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-15', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-15', '06:53:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-15', '06:56:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-15', '06:50:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-15', '06:44:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-15', '06:51:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-15', '06:55:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-15', '06:42:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-15', '06:51:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-15', '06:57:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-15', '06:51:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-15', '06:43:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-15', '06:54:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-15', '06:45:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-15', '06:59:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-15', '06:48:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-15', '06:59:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-15', '06:51:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-15', '07:08:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-15', '06:43:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-15', '06:48:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-15', '06:57:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-15', '06:40:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-15', '06:55:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-15', '06:50:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-15', '06:43:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-16', '06:40:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-16', '06:54:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-16', '06:49:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-16', '06:55:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-16', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-16', '06:41:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-16', '06:53:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-16', '07:16:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-16', '06:56:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-16', '06:56:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-16', '06:40:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-16', '06:49:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-16', '06:49:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-16', '06:41:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-16', '06:43:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-16', '06:43:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-16', '06:41:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-16', '06:58:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-16', '06:47:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-16', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-16', '06:55:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-16', '06:46:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-16', '06:58:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-16', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-16', '06:48:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-16', '06:40:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-16', '06:57:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-16', '06:44:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-16', '06:52:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-19', '06:54:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-19', '06:43:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-19', '06:43:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-19', '06:45:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-19', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-19', '06:44:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-19', '06:47:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-19', '06:48:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-19', '06:53:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-19', '06:43:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-19', '06:57:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-19', '06:51:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-19', '07:15:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-19', '07:04:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-19', '06:52:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-19', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-19', '06:46:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-19', '06:54:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-19', '06:52:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-19', '06:53:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-19', '06:53:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-19', '06:50:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-19', '07:10:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-19', '06:45:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-19', '06:47:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-19', '06:50:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-19', '06:55:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-19', '06:42:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-19', '06:48:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-19', '06:42:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-20', '06:52:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-20', '06:58:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-20', '06:43:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-20', '06:51:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-20', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-20', '06:50:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-20', '06:40:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-20', '06:56:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-20', '06:52:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-20', '06:59:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-20', '06:44:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-20', '06:41:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-20', '07:12:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-20', '06:41:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-20', '06:48:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-20', '06:51:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-20', '06:56:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-20', '06:53:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-20', '06:42:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-20', '07:01:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-20', '06:59:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-20', '06:46:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-20', '06:49:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-20', '06:53:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-20', '07:06:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-20', '07:15:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-20', '06:56:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-20', '06:57:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-20', '07:05:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-21', '06:54:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-21', '07:04:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-21', '06:57:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-21', '06:46:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-21', '06:49:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-21', '07:07:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-21', '07:15:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-21', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-21', '06:51:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-21', '06:45:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-21', '07:19:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-21', '06:47:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-21', '06:59:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-21', '06:58:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-21', '07:15:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-21', '06:49:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-21', '06:53:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-21', '06:53:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-21', '06:55:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-21', '06:40:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-21', '06:46:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-21', '07:09:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-21', '06:54:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-21', '06:48:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-21', '06:42:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-21', '06:57:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-21', '06:45:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-22', '06:44:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-22', '07:15:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-22', '07:15:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-22', '06:52:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-22', '06:47:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-22', '06:45:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-22', '06:43:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-22', '06:44:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-22', '06:43:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-22', '06:44:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-22', '06:52:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-22', '06:59:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-22', '06:48:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-22', '06:52:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-22', '06:54:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-22', '06:52:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-22', '06:54:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-22', '06:48:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-22', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-22', '07:07:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-22', '06:40:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-22', '06:45:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-22', '06:43:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-22', '07:18:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-22', '06:54:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-22', '06:44:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-22', '06:56:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-22', '06:46:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-22', '06:49:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-22', '07:17:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-23', '06:44:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-23', '06:46:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-23', '06:56:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-23', '06:42:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-23', '06:52:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-23', '06:43:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-23', '06:59:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-23', '07:11:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-23', '06:54:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-23', '06:44:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-23', '06:43:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-23', '07:20:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-23', '06:52:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-23', '06:44:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-23', '06:57:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-23', '06:41:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-23', '06:45:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-23', '06:47:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-23', '06:44:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-23', '06:49:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-23', '06:55:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-23', '06:58:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-23', '06:48:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-23', '06:50:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-23', '06:53:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-23', '06:56:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-23', '06:47:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-26', '06:50:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-26', '06:57:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-26', '06:43:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-26', '06:47:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-26', '06:55:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-26', '06:47:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-26', '06:52:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-26', '06:59:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-26', '06:47:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-26', '07:07:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-26', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-26', '06:55:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-26', '06:58:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-26', '06:57:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-26', '06:47:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-26', '06:49:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-26', '06:48:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-26', '06:43:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-26', '06:50:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-26', '06:55:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-26', '06:53:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-26', '07:04:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-26', '06:42:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-26', '06:55:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-26', '06:44:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-26', '06:52:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-26', '06:50:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-26', '06:52:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-27', '06:46:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-27', '06:48:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-27', '06:47:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-27', '07:16:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-27', '06:41:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-27', '06:51:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-27', '06:46:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-27', '06:49:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-27', '06:56:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-27', '06:45:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-27', '06:45:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-27', '06:59:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-27', '06:55:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-27', '06:52:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-27', '06:59:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-27', '06:43:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-27', '07:19:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-27', '06:51:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-27', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-27', '06:44:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-27', '06:55:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-27', '06:51:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-27', '07:11:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-27', '06:40:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-27', '06:55:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-27', '06:42:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-27', '06:46:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-28', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-28', '06:45:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-28', '06:58:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-28', '06:41:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-28', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-28', '06:47:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-28', '07:18:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-28', '06:52:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-28', '06:55:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-28', '06:58:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-28', '07:14:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-28', '06:43:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-28', '07:02:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-28', '06:50:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-28', '06:46:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-28', '06:47:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-28', '06:56:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-28', '06:58:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-28', '06:52:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-28', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-28', '06:44:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-28', '06:41:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-28', '06:40:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-28', '06:49:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-28', '07:15:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-28', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-28', '06:43:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-28', '06:54:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-28', '06:59:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-29', '06:55:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-29', '07:15:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-29', '06:59:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-29', '06:44:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-29', '06:59:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-29', '06:47:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-29', '06:52:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-29', '06:43:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-29', '06:42:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-29', '06:59:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-29', '06:55:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-01-29', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-29', '06:51:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-29', '06:51:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-29', '06:45:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-29', '06:57:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-29', '06:44:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-29', '07:04:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-29', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-29', '06:43:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-29', '06:57:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-29', '07:16:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-29', '06:46:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-29', '06:56:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-29', '06:57:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-29', '06:41:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-29', '06:45:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-29', '06:45:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-01-29', '06:44:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-01-30', '06:43:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-01-30', '06:58:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-01-30', '07:08:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-01-30', '06:46:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-01-30', '06:51:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-01-30', '06:43:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-01-30', '07:10:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-01-30', '06:53:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-01-30', '06:51:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-01-30', '06:53:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-01-30', '06:57:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-01-30', '07:05:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-01-30', '06:51:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-01-30', '06:57:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-01-30', '06:41:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-01-30', '06:48:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-01-30', '06:46:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-01-30', '06:43:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-01-30', '06:58:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-01-30', '06:46:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-01-30', '06:58:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-01-30', '06:57:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-01-30', '06:48:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-01-30', '06:47:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-01-30', '07:05:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-01-30', '07:10:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-01-30', '07:18:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-01-30', '06:40:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-02', '06:56:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-02', '06:54:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-02', '07:02:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-02', '06:58:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-02', '06:58:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-02', '06:58:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-02', '06:44:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-02', '07:19:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-02', '06:56:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-02', '06:56:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-02', '06:45:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-02', '07:02:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-02', '06:53:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-02', '06:41:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-02', '06:49:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-02', '07:20:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-02', '07:08:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-02', '06:57:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-02', '06:49:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-02', '06:45:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-02', '06:54:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-02', '06:58:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-02', '07:15:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-02', '06:54:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-02', '06:51:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-02', '06:44:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-02', '06:51:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-02', '06:41:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-02', '06:42:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-03', '06:41:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-03', '07:17:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-03', '06:59:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-03', '06:40:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-03', '07:08:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-03', '06:41:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-03', '07:06:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-03', '06:59:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-03', '06:58:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-03', '06:47:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-03', '06:42:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-03', '06:55:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-03', '06:43:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-03', '06:53:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-03', '07:10:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-03', '06:49:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-03', '06:53:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-03', '06:52:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-03', '06:58:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-03', '06:42:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-03', '06:53:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-03', '06:44:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-03', '06:57:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-03', '06:50:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-03', '06:44:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-03', '06:49:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-03', '06:42:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-03', '06:40:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-04', '06:59:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-04', '06:42:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-04', '06:42:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-04', '06:53:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-04', '06:59:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-04', '06:47:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-04', '06:52:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-04', '06:56:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-04', '06:49:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-04', '06:46:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-04', '06:41:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-04', '06:41:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-04', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-04', '07:06:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-04', '06:51:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-04', '06:52:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-04', '06:54:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-04', '06:57:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-04', '07:03:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-04', '06:40:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-04', '06:41:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-04', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-04', '06:43:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-04', '06:59:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-04', '06:50:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-04', '06:45:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-04', '06:49:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-04', '06:47:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-04', '06:49:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-05', '07:18:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-05', '06:53:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-05', '06:49:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-05', '06:41:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-05', '06:43:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-05', '06:51:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-05', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-05', '07:03:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-05', '06:55:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-05', '06:41:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-05', '06:55:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-05', '06:56:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-05', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-05', '06:42:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-05', '06:53:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-05', '06:42:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-05', '07:05:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-05', '06:42:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-05', '06:48:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-05', '06:51:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-05', '06:57:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-05', '06:48:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-05', '06:44:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-05', '06:52:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-06', '06:52:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-06', '06:55:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-06', '06:58:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-06', '06:51:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-06', '06:45:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-06', '06:50:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-06', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-06', '06:59:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-06', '07:11:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-06', '06:50:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-06', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-06', '06:43:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-06', '06:57:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-06', '06:40:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-06', '07:16:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-06', '07:04:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-06', '06:49:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-06', '06:46:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-06', '06:55:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-06', '06:52:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-06', '06:40:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-06', '06:51:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-06', '06:48:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-06', '06:44:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-06', '07:09:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-06', '06:56:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-06', '07:13:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-06', '06:42:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-06', '06:49:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-09', '06:45:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-09', '06:44:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-09', '07:16:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-09', '07:02:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-09', '06:47:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-09', '07:05:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-09', '06:58:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-09', '07:10:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-09', '06:51:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-09', '06:48:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-09', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-09', '06:58:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-09', '06:43:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-09', '06:56:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-09', '06:53:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-09', '06:45:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-09', '06:54:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-09', '06:42:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-09', '06:56:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-09', '07:07:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-09', '06:52:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-09', '07:19:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-09', '06:58:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-09', '06:52:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-09', '06:50:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-09', '06:41:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-09', '06:44:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-10', '06:57:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-10', '07:13:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-10', '06:47:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-10', '06:54:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-10', '07:16:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-10', '06:54:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-10', '06:49:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-10', '06:42:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-10', '06:57:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-10', '06:45:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-10', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-10', '06:52:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-10', '06:42:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-10', '06:43:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-10', '06:59:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-10', '06:54:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-10', '06:40:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-10', '06:40:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-10', '06:50:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-10', '06:59:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-10', '06:56:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-10', '07:18:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-10', '06:57:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-10', '06:50:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-10', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-10', '06:59:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-10', '06:44:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-10', '06:57:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-11', '06:59:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-11', '06:58:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-11', '06:45:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-11', '06:41:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-11', '06:41:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-11', '06:54:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-11', '06:50:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-11', '06:46:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-11', '06:47:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-11', '06:43:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-11', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-11', '06:48:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-11', '06:42:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-11', '06:58:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-11', '06:48:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-11', '06:47:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-11', '06:43:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-11', '06:58:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-11', '06:46:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-11', '06:44:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-11', '06:47:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-11', '06:43:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-11', '06:49:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-11', '06:41:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-11', '06:57:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-11', '07:05:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-11', '06:50:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-11', '07:07:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-12', '06:44:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-12', '07:16:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-12', '06:42:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-12', '06:46:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-12', '06:55:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-12', '06:58:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-12', '06:59:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-12', '06:46:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-12', '06:58:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-12', '06:43:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-12', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-12', '06:48:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-12', '06:52:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-12', '06:59:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-12', '06:56:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-12', '06:40:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-12', '06:51:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-12', '06:53:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-12', '06:45:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-12', '06:52:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-12', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-12', '06:52:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-12', '06:46:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-12', '06:40:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-12', '06:58:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-12', '06:53:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-12', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-12', '06:41:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-13', '06:48:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-13', '06:47:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-13', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-13', '06:51:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-13', '07:14:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-13', '06:56:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-13', '06:47:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-13', '06:53:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-13', '07:15:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-13', '06:48:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-13', '07:09:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-13', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-13', '06:44:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-13', '06:44:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-13', '06:53:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-13', '06:58:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-13', '06:56:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-13', '07:01:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-13', '06:40:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-13', '07:03:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-13', '06:54:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-13', '06:51:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-13', '06:59:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-13', '06:51:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-13', '06:54:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-13', '06:55:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-13', '06:48:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-13', '06:41:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-13', '07:08:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-13', '06:44:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-16', '06:42:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-16', '07:18:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-16', '06:44:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-16', '06:58:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-16', '06:54:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-16', '06:52:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-16', '07:02:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-16', '06:45:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-16', '06:50:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-16', '06:59:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-16', '06:55:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-16', '06:48:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-16', '07:04:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-16', '06:50:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-16', '07:07:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-16', '06:44:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-16', '07:12:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-16', '07:10:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-16', '06:52:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-16', '07:07:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-16', '06:45:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-16', '06:49:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-16', '07:14:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-16', '06:47:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-16', '06:54:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-17', '06:56:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-17', '07:03:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-17', '06:41:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-17', '07:04:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-17', '07:08:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-17', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-17', '07:16:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-17', '06:49:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-17', '06:56:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-17', '06:44:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-17', '06:41:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-17', '07:19:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-17', '07:06:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-17', '06:51:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-17', '06:44:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-17', '06:53:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-17', '06:47:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-17', '07:17:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-17', '06:47:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-17', '07:04:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-17', '06:40:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-17', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-17', '07:07:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-17', '06:40:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-17', '06:42:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-17', '07:16:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-17', '06:45:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-17', '06:44:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-17', '06:55:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-18', '07:09:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-18', '06:56:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-18', '06:57:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-18', '07:08:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-18', '06:42:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-18', '06:59:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-18', '06:55:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-18', '06:53:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-18', '06:50:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-18', '06:42:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-18', '06:55:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-18', '06:52:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-18', '06:50:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-18', '06:59:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-18', '06:54:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-18', '06:52:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-18', '06:55:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-18', '06:44:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-18', '06:48:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-18', '06:45:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-18', '06:42:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-18', '07:17:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-18', '06:50:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-18', '06:58:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-18', '07:01:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-18', '06:44:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-18', '06:53:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-18', '06:42:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-19', '06:52:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-19', '06:51:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-19', '06:47:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-19', '06:41:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-19', '06:52:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-19', '06:45:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-19', '07:16:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-19', '06:48:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-19', '06:55:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-19', '06:47:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-19', '07:08:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-19', '06:43:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-19', '07:01:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-19', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-19', '06:43:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-19', '06:47:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-19', '06:50:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-19', '06:43:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-19', '06:46:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-19', '06:51:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-19', '06:51:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-19', '06:53:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-19', '06:52:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-19', '06:53:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-19', '06:50:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-19', '06:44:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-19', '06:54:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-19', '06:50:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-19', '06:53:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-20', '06:51:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-20', '06:50:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-20', '06:47:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-20', '07:06:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-20', '06:47:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-20', '06:53:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-20', '06:47:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-20', '06:45:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-20', '06:42:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-20', '06:45:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-20', '06:48:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-20', '06:51:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-20', '07:17:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-20', '06:59:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-20', '06:47:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-20', '07:16:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-20', '06:49:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-20', '06:57:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-20', '06:43:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-20', '06:46:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-20', '06:56:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-20', '07:16:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-20', '06:56:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-20', '06:40:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-20', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-20', '06:55:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-20', '07:20:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-20', '06:49:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-20', '06:47:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-20', '06:41:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-23', '07:14:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-23', '06:40:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-23', '07:17:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-23', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-23', '06:50:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-23', '06:59:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-23', '06:41:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-23', '06:57:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-23', '06:51:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-23', '06:41:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-23', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-23', '06:45:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-23', '07:17:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-23', '06:53:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-23', '07:03:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-23', '06:54:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-23', '06:44:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-23', '06:52:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-23', '06:56:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-23', '06:46:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-23', '07:19:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-23', '06:42:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-23', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-23', '06:59:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-23', '06:52:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-23', '06:51:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-23', '06:48:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-23', '06:55:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-24', '06:50:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-24', '06:50:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-24', '06:55:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-24', '06:47:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-24', '06:43:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-24', '06:45:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-24', '06:49:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-24', '06:59:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-24', '07:05:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-24', '06:56:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-24', '06:47:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-24', '06:57:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-24', '06:44:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-24', '07:20:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-24', '06:42:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-24', '07:15:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-24', '06:49:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-24', '07:12:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-24', '06:46:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-24', '06:46:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-24', '06:50:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-24', '06:50:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-24', '07:14:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-24', '06:46:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-24', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-24', '06:49:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-24', '06:44:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-24', '07:07:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-24', '06:42:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-25', '06:43:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-25', '06:44:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-25', '06:42:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-25', '06:40:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-25', '06:44:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-25', '06:56:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-25', '06:59:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-25', '06:59:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-25', '06:56:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-25', '06:46:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-25', '06:58:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-25', '06:45:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-25', '06:59:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-25', '06:55:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-25', '06:55:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-25', '06:52:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-25', '06:43:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-25', '06:40:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-25', '06:42:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-25', '06:47:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-25', '06:48:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-25', '07:02:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-25', '06:56:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-25', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-25', '06:56:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-25', '06:55:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-25', '06:58:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-25', '06:52:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-26', '07:04:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-26', '06:44:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-26', '06:54:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-26', '07:07:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-26', '06:59:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-02-26', '06:43:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-26', '06:46:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-26', '07:03:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-26', '06:48:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-26', '06:44:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-26', '06:48:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-26', '06:40:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-26', '07:13:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-26', '06:47:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-26', '06:53:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-26', '07:03:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-26', '06:43:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-26', '06:41:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-26', '06:45:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-26', '06:45:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-26', '07:05:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-26', '06:56:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-26', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-26', '06:51:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-26', '06:54:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-26', '06:52:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-26', '06:42:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-26', '06:46:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-02-27', '06:40:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-02-27', '07:09:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-02-27', '06:58:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-02-27', '06:57:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-02-27', '06:44:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-02-27', '06:56:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-02-27', '06:40:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-02-27', '06:45:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-02-27', '06:55:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-02-27', '06:42:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-02-27', '06:45:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-02-27', '07:05:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-02-27', '06:40:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-02-27', '06:48:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-02-27', '07:17:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-02-27', '06:50:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-02-27', '06:53:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-02-27', '06:51:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-02-27', '06:45:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-02-27', '06:46:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-02-27', '06:52:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-02-27', '07:12:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-02-27', '07:16:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-02-27', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-02-27', '06:53:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-02-27', '06:55:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-02-27', '06:42:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-02-27', '07:17:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-02-27', '07:03:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-02', '06:44:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-03-02', '06:51:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-03-02', '07:04:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-02', '06:41:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-02', '06:52:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-02', '07:02:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-02', '06:50:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-03-02', '06:43:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-02', '06:59:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-02', '07:04:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-02', '07:19:00', '13:17:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-02', '06:52:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-02', '06:50:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-03-02', '07:08:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-02', '07:09:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-03-02', '06:45:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-02', '06:40:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-02', '06:49:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-03-02', '06:49:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-02', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-03-02', '06:50:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-02', '06:55:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-03-02', '06:48:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-03-02', '06:58:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-02', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-02', '06:48:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-02', '06:45:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-02', '07:03:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-03-02', '06:46:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-02', '06:52:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-03', '07:16:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-03-03', '06:54:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-03', '06:59:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-03', '06:56:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-03', '06:57:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-03', '06:53:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-03-03', '06:51:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-03', '06:48:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-03', '06:51:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-03', '06:44:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-03', '06:43:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-03', '06:55:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-03-03', '06:51:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-03', '06:58:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-03-03', '07:05:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-03', '06:47:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-03', '06:49:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-03', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-03-03', '06:51:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-03', '06:59:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-03-03', '06:47:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-03-03', '06:40:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-03', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-03', '07:13:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-03', '06:52:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-03', '06:52:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-03-03', '06:48:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-03', '06:42:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-04', '06:47:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-03-04', '06:41:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-04', '06:44:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-04', '06:50:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-04', '06:45:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-04', '06:56:00', '13:00:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-03-04', '06:44:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-04', '06:43:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-04', '06:54:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-04', '06:51:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-04', '06:44:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-04', '06:40:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-03-04', '06:58:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-04', '07:06:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-03-04', '06:46:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-04', '06:47:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-04', '07:03:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-03-04', '06:50:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-04', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-03-04', '06:53:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-04', '06:41:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-03-04', '06:48:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-04', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-04', '06:50:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-04', '06:55:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-04', '06:46:00', '13:23:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-04', '06:44:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-05', '07:11:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-03-05', '06:40:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-03-05', '06:55:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-05', '07:07:00', '13:11:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-05', '06:47:00', '13:30:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-05', '06:55:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-05', '06:47:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-05', '06:57:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-05', '06:44:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-05', '06:47:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-05', '06:40:00', '13:24:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-05', '06:44:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-03-05', '06:59:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-05', '06:54:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-03-05', '06:56:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-05', '06:51:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-05', '07:01:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-03-05', '06:53:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-05', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-05', '07:15:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-03-05', '06:44:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-03-05', '06:56:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-05', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-05', '07:15:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-05', '06:43:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-05', '06:49:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-03-05', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-05', '07:10:00', '13:06:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-06', '07:19:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-03-06', '06:59:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-03-06', '06:44:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-06', '06:48:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-06', '06:42:00', '13:07:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-06', '07:10:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-06', '07:12:00', '13:16:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-06', '06:56:00', '13:27:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-06', '06:48:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-06', '06:59:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-06', '06:42:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-06', '06:43:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (14, '2026-03-06', '06:52:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-06', '06:56:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-06', '07:18:00', '13:28:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-06', '07:08:00', '13:22:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-03-06', '06:52:00', '13:03:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-06', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-03-06', '06:47:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-06', '06:50:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-03-06', '06:57:00', '13:12:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-06', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-06', '06:48:00', '13:08:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-06', '07:05:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-06', '06:50:00', '13:09:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-03-06', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-06', '06:43:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (1, '2026-03-09', '06:50:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (2, '2026-03-09', '06:56:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (3, '2026-03-09', '06:56:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (4, '2026-03-09', '06:53:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (5, '2026-03-09', '06:52:00', '13:15:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (6, '2026-03-09', '06:50:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (7, '2026-03-09', '06:58:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (8, '2026-03-09', '06:42:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (9, '2026-03-09', '06:40:00', '13:05:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (10, '2026-03-09', '06:51:00', '13:20:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (11, '2026-03-09', '06:49:00', '13:29:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (12, '2026-03-09', '06:54:00', '13:18:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (13, '2026-03-09', '06:50:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (15, '2026-03-09', '06:56:00', '13:10:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (16, '2026-03-09', '06:44:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (17, '2026-03-09', '06:58:00', '13:02:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (18, '2026-03-09', '07:14:00', '13:25:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (19, '2026-03-09', '06:56:00', '13:19:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (20, '2026-03-09', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (21, '2026-03-09', '06:41:00', '13:04:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (22, '2026-03-09', '06:53:00', '13:13:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (23, '2026-03-09', '06:43:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (24, '2026-03-09', '06:49:00', '13:01:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (25, '2026-03-09', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (26, '2026-03-09', '06:49:00', '13:14:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (27, '2026-03-09', '06:59:00', '13:26:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (28, '2026-03-09', '06:55:00', '13:21:00', '');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (29, '2026-03-09', NULL, NULL, 'Reposo Médico');
+INSERT INTO asistencias (ID_Profesor, Fecha, Hora_Entrada, Hora_Salida, Observaciones) VALUES (30, '2026-03-09', '06:48:00', '13:23:00', '');
