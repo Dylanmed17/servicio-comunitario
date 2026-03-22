@@ -11,7 +11,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const [stats, setStats] = useState({ total: 0, present: 0, absent: 0, retrasos: 0 });
     const [personnel, setPersonnel] = useState([]);
-    
+
     // UI State
     const [activeTab, setActiveTab] = useState('monitoreo'); // 'monitoreo', 'personal', 'historial'
     const [monitoringView, setMonitoringView] = useState('timeline'); // 'timeline' or 'table'
@@ -19,7 +19,7 @@ const Dashboard = () => {
     // Form State (Personnel CRUD)
     const [formData, setFormData] = useState({ id: null, cedula: '', nombre: '', apellido: '', cargo: '', telefono: '' });
     const [isEditing, setIsEditing] = useState(false);
-    
+
     // Timeline State
     const [attendances, setAttendances] = useState([]);
 
@@ -140,18 +140,18 @@ const Dashboard = () => {
                     <p className="text-sm text-gray-500">Registro de entradas y salidas del día.</p>
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-100 p-1 rounded-lg">
-                    <Button 
-                        variant={monitoringView === 'timeline' ? 'default' : 'ghost'} 
-                        size="sm" 
+                    <Button
+                        variant={monitoringView === 'timeline' ? 'default' : 'ghost'}
+                        size="sm"
                         onClick={() => setMonitoringView('timeline')}
                         className={monitoringView === 'timeline' ? 'bg-[#ED1C24] hover:bg-[#c4161c] text-white' : 'text-gray-500'}
                     >
                         <LayoutGrid className="w-4 h-4 mr-2" />
                         Timeline
                     </Button>
-                    <Button 
-                        variant={monitoringView === 'table' ? 'default' : 'ghost'} 
-                        size="sm" 
+                    <Button
+                        variant={monitoringView === 'table' ? 'default' : 'ghost'}
+                        size="sm"
                         onClick={() => setMonitoringView('table')}
                         className={monitoringView === 'table' ? 'bg-[#ED1C24] hover:bg-[#c4161c] text-white' : 'text-gray-500'}
                     >
@@ -178,11 +178,10 @@ const Dashboard = () => {
                                 <div className="text-left md:text-right">
                                     <p className="font-bold text-lg">{att.hora}</p>
                                     <div className="flex space-x-2 mt-1">
-                                        <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${
-                                            att.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' : 
-                                            att.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' : 
-                                            'bg-green-100 text-green-800'
-                                        }`}>
+                                        <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${att.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' :
+                                                att.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' :
+                                                    'bg-green-100 text-green-800'
+                                            }`}>
                                             {att.estado}
                                         </span>
                                         {att.observaciones && <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{att.observaciones}</span>}
@@ -252,9 +251,9 @@ const Dashboard = () => {
                         </div>
                         <div>
                             <Label htmlFor="estado">Estado</Label>
-                            <select 
-                                name="estado" 
-                                value={historyFilters.estado} 
+                            <select
+                                name="estado"
+                                value={historyFilters.estado}
                                 onChange={handleFilterChange}
                                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             >
@@ -299,9 +298,9 @@ const Dashboard = () => {
                                         <td className="px-4 py-3 font-mono">{record.hora_salida || '--:--'}</td>
                                         <td className="px-4 py-3">
                                             <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold
-                                                ${record.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' : 
-                                                record.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' : 
-                                                'bg-green-100 text-green-800'}
+                                                ${record.estado === 'Retraso' ? 'bg-yellow-100 text-yellow-800' :
+                                                    record.estado === 'Reposo Médico' ? 'bg-blue-100 text-blue-800' :
+                                                        'bg-green-100 text-green-800'}
                                             `}>
                                                 {record.estado}
                                             </span>
@@ -408,26 +407,26 @@ const Dashboard = () => {
                     </h2>
                     <p className="text-xs text-gray-500 mt-1">U.E.N. Cardenal Quintero</p>
                 </div>
-                
+
                 <div className="flex-1 py-6 px-4 space-y-2">
-                    <Button 
-                        variant={activeTab === 'monitoreo' ? 'secondary' : 'ghost'} 
+                    <Button
+                        variant={activeTab === 'monitoreo' ? 'secondary' : 'ghost'}
                         className={`w-full justify-start ${activeTab === 'monitoreo' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'text-gray-600'}`}
                         onClick={() => setActiveTab('monitoreo')}
                     >
                         <Clock className="mr-3 h-5 w-5" />
                         Monitoreo en Vivo
                     </Button>
-                    <Button 
-                        variant={activeTab === 'historial' ? 'secondary' : 'ghost'} 
+                    <Button
+                        variant={activeTab === 'historial' ? 'secondary' : 'ghost'}
                         className={`w-full justify-start ${activeTab === 'historial' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'text-gray-600'}`}
                         onClick={() => setActiveTab('historial')}
                     >
                         <CalendarDays className="mr-3 h-5 w-5" />
                         Historial y Reportes
                     </Button>
-                    <Button 
-                        variant={activeTab === 'personal' ? 'secondary' : 'ghost'} 
+                    <Button
+                        variant={activeTab === 'personal' ? 'secondary' : 'ghost'}
                         className={`w-full justify-start ${activeTab === 'personal' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'text-gray-600'}`}
                         onClick={() => setActiveTab('personal')}
                     >
@@ -448,7 +447,7 @@ const Dashboard = () => {
             <main className="flex-1 flex flex-col overflow-hidden">
                 <div className="flex-1 overflow-y-auto p-6 md:p-8">
                     <div className="max-w-6xl mx-auto space-y-8">
-                        
+
                         {/* Fixed Metrics Header */}
                         <div>
                             <h1 className="text-2xl font-semibold text-gray-800 mb-6">Resumen del Día</h1>

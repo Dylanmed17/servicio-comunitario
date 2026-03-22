@@ -7,7 +7,7 @@ router.get('/stats', verifyToken, async (req, res) => {
     const db = req.db;
     // const today = new Date().toISOString().split('T')[0]; // Current date
     // PARA PRUEBAS usar la última fecha del seed (9 de Marzo de 2026) o fecha actual si hay datos
-    const today = '2026-03-09'; 
+    const today = '2026-03-09';
 
     try {
         const [totalResult] = await db.promise().query('SELECT COUNT(*) as total FROM profesores');
@@ -49,7 +49,7 @@ router.get('/stats', verifyToken, async (req, res) => {
 // 2. GET TODAY'S ATTENDANCE (TIMELINE)
 router.get('/attendances/today', verifyToken, async (req, res) => {
     const db = req.db;
-    const today = '2026-03-09'; 
+    const today = '2026-03-09';
     try {
         const query = `
             SELECT 
@@ -68,7 +68,7 @@ router.get('/attendances/today', verifyToken, async (req, res) => {
             ORDER BY a.hora_entrada DESC
         `;
         const [results] = await db.promise().query(query, [today]);
-        
+
         const formatTime = (timeStr) => {
             if (!timeStr) return null;
             const [h, m] = timeStr.split(':');
@@ -138,7 +138,7 @@ router.get('/attendances/history', verifyToken, async (req, res) => {
             JOIN profesores p ON a.id_profesor = p.id
             WHERE 1=1
         `;
-        
+
         const params = [];
 
         if (startDate && endDate) {
@@ -157,12 +157,12 @@ router.get('/attendances/history', verifyToken, async (req, res) => {
 
         // Map abstract state in Javascript (Ya que Ausente no existe en DB, Ausente debe calcularse de otra forma si se pide)
         // Para simplificar, devolvemos todos los filtrados por DB y aplicamos el filtro de "Estado" en memoria si existe
-        
+
         let finalResults = results.map(row => {
             // Formatear fecha YYYY-MM-DD local
             const dateObj = new Date(row.fecha);
             const localDate = new Date(dateObj.getTime() - dateObj.getTimezoneOffset() * 60000).toISOString().split('T')[0];
-            
+
             let currentStatus = 'A tiempo';
             if (row.observaciones === 'Reposo Médico') currentStatus = 'Reposo Médico';
             // Para simplificar, si entró después de las 07:05 (margen de gracia)
