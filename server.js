@@ -1,5 +1,6 @@
 require('dotenv').config();
 const os = require('os');
+const path = require('path');
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -64,12 +65,16 @@ app.get('/api/network-ip', (req, res) => {
     res.json({ ip: localIp });
 });
 
-// Helper redirect for mobile devices reaching port 3000
-app.get('/scan', (req, res) => {
-    res.redirect(`http://${req.hostname}:5173/scan`);
-});
-app.get('/', (req, res) => {
-    res.redirect(`http://${req.hostname}:5173/`);
+// Serve static frontend files from client/dist if available
+const distPath = path.join(__dirname, 'client', 'dist');
+app.use(express.static(distPath));
+
+// For all non-API routes, send index.html (SPA routing)
+app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+        return next();
+    }
+    res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Start server

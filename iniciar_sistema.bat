@@ -5,16 +5,19 @@ echo   Iniciando Sistema de Asistencia Digital
 echo   E.B.D. "Jose Antonio Gonzalez"
 echo ========================================================
 echo.
-echo 1. Iniciando Servidor Backend (Puerto 3000)...
-start "Backend - Servidor Node" cmd /k "node server.js"
+cd /d "%~dp0"
+
+echo 1. Iniciando Servidor Principal (Puerto 3000)...
+start "Servidor Principal" cmd /k "node server.js"
 
 timeout /t 2 >nul
 
-echo 2. Iniciando Frontend Vite (Puerto 5173 - Red Local)...
+echo 2. Iniciando Modo Desarrollo Vite (Puerto 5173)...
 cd client
-start "Frontend - Vite" cmd /k "npm run dev"
+start "Vite Dev" cmd /k "npm run dev"
 
 echo.
 echo ========================================================
-echo   Todo listo! Los servidores estan abiertos.
+echo   Acceso Principal: http://localhost:3000/
+echo   Acceso Vite Dev:  http://localhost:5173/
 echo ========================================================

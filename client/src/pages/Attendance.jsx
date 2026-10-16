@@ -36,9 +36,10 @@ const Attendance = () => {
         fetchNetworkIp();
     }, []);
 
-    // Determine the host for the QR code
+    // Determine the host and port for the QR code
     const resolvedHost = customHost || networkIp || window.location.hostname || 'localhost';
-    const scanUrl = `${window.location.protocol}//${resolvedHost}:5173/scan`;
+    const currentPort = window.location.port ? `:${window.location.port}` : '';
+    const scanUrl = `${window.location.protocol}//${resolvedHost}${currentPort}/scan`;
 
     const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(scanUrl)}&margin=8&color=111827`;
 
