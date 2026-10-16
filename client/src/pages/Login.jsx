@@ -16,7 +16,8 @@ const Login = () => {
         e.preventDefault();
         setError('');
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/login', { username, password });
+            const apiBase = `${window.location.protocol}//${window.location.hostname}:3000/api`;
+            const response = await axios.post(`${apiBase}/auth/login`, { username, password });
             localStorage.setItem('token', response.data.accessToken);
             localStorage.setItem('user', JSON.stringify(response.data));
             navigate('/dashboard');
@@ -42,7 +43,7 @@ const Login = () => {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 className="text-md py-6"
-                                placeholder="Ingrese su usuario"
+                                placeholder="admin"
                                 required
                             />
                         </div>
@@ -54,9 +55,12 @@ const Login = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="text-md py-6"
-                                placeholder="Ingrese su contraseña"
+                                placeholder="••••••••"
                                 required
                             />
+                        </div>
+                        <div className="text-xs text-gray-500 bg-gray-50 p-2.5 rounded-md border border-gray-100 text-center">
+                            Credenciales iniciales: <strong className="font-mono text-gray-700">admin</strong> / <strong className="font-mono text-gray-700">password123</strong>
                         </div>
                         {error && (
                             <div className="p-3 rounded-md text-sm font-medium bg-red-100 text-red-700">

@@ -59,6 +59,7 @@ const Dashboard = () => {
 
     const token = localStorage.getItem('token');
     const authHeader = { headers: { Authorization: `Bearer ${token}` } };
+    const API_BASE = `${window.location.protocol}//${window.location.hostname}:3000/api`;
 
     useEffect(() => {
         fetchStats();
@@ -69,7 +70,7 @@ const Dashboard = () => {
 
     const fetchStats = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/dashboard/stats', authHeader);
+            const res = await axios.get(`${API_BASE}/dashboard/stats`, authHeader);
             setStats(res.data);
         } catch (error) {
             console.error(error);
@@ -79,7 +80,7 @@ const Dashboard = () => {
 
     const fetchAttendances = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/dashboard/attendances/today', authHeader);
+            const res = await axios.get(`${API_BASE}/dashboard/attendances/today`, authHeader);
             setAttendances(res.data);
         } catch (error) {
             console.error('Error fetching attendances:', error);
@@ -89,7 +90,7 @@ const Dashboard = () => {
     const fetchHistory = async () => {
         try {
             const params = new URLSearchParams(historyFilters).toString();
-            const res = await axios.get(`http://localhost:3000/api/dashboard/attendances/history?${params}`, authHeader);
+            const res = await axios.get(`${API_BASE}/dashboard/attendances/history?${params}`, authHeader);
             setHistory(res.data);
             setHistoryPage(1); // Reset page on new fetch
         } catch (error) {
@@ -99,7 +100,7 @@ const Dashboard = () => {
 
     const fetchPersonnel = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/personnel', authHeader);
+            const res = await axios.get(`${API_BASE}/personnel`, authHeader);
             setPersonnel(res.data);
             setPersonnelPage(1); // Reset page on new fetch
         } catch (error) {
@@ -120,9 +121,9 @@ const Dashboard = () => {
         e.preventDefault();
         try {
             if (isEditing) {
-                await axios.put(`http://localhost:3000/api/personnel/${formData.id}`, formData, authHeader);
+                await axios.put(`${API_BASE}/personnel/${formData.id}`, formData, authHeader);
             } else {
-                await axios.post('http://localhost:3000/api/personnel', formData, authHeader);
+                await axios.post(`${API_BASE}/personnel`, formData, authHeader);
             }
             setFormData({ id: null, cedula: '', nombre: '', apellido: '', cargo: '', telefono: '' });
             setIsEditing(false);
@@ -138,7 +139,7 @@ const Dashboard = () => {
     const handleDelete = async (id) => {
         if (confirm('¿Estás seguro de eliminar este personal?')) {
             try {
-                await axios.delete(`http://localhost:3000/api/personnel/${id}`, authHeader);
+                await axios.delete(`${API_BASE}/personnel/${id}`, authHeader);
                 fetchPersonnel();
                 fetchStats();
             } catch (error) {
@@ -161,7 +162,7 @@ const Dashboard = () => {
     const submitBulkObservation = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/api/dashboard/attendances/observations/bulk', bulkModal, authHeader);
+            await axios.post(`${API_BASE}/dashboard/attendances/observations/bulk`, bulkModal, authHeader);
             setBulkModal({ isOpen: false, id_profesor: null, nombre_profesor: '', fecha_inicio: '', fecha_fin: '', motivo: 'Reposo Médico' });
             fetchHistory();
             fetchAttendances();
@@ -174,7 +175,7 @@ const Dashboard = () => {
         e.preventDefault();
         try {
             const dbId = singleModal.id_asistencia.toString().split('_')[0]; // Handle timeline IDs (123_in)
-            await axios.put(`http://localhost:3000/api/dashboard/attendances/${dbId}/observation`, { observaciones: singleModal.observaciones }, authHeader);
+            await axios.put(`${API_BASE}/dashboard/attendances/${dbId}/observation`, { observaciones: singleModal.observaciones }, authHeader);
             setSingleModal({ isOpen: false, id_asistencia: null, nombre_profesor: '', observaciones: '' });
             fetchHistory();
             fetchAttendances();

@@ -10,6 +10,20 @@ const getLocalDateString = () => {
     return `${year}-${month}-${day}`;
 };
 
+// Helper for 12-hour format display with AM/PM
+const formatTime12 = (timeStr) => {
+    if (!timeStr) return '--:--';
+    const parts = timeStr.toString().split(':');
+    if (parts.length < 2) return timeStr;
+    const hour = parseInt(parts[0], 10);
+    const m = parts[1];
+    const s = parts[2] ? `:${parts[2]}` : '';
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const formattedHour = hour % 12 || 12;
+    const padHour = String(formattedHour).padStart(2, '0');
+    return `${padHour}:${m}${s} ${ampm}`;
+};
+
 // 1. Mark Attendance (Manual Cédula Input)
 router.post('/', (req, res) => {
     const { cedula } = req.body;
@@ -129,10 +143,32 @@ router.post('/qr-scan', async (req, res) => {
             profesor = profResults[0];
         }
 
-        // Mark today's attendance
+        // Exact date and local time
         const today = getLocalDateString();
-        const now = new Date().toLocaleTimeString('en-US', { hour12: false });
+        const nowObj = new Date();
+        const nowTime = nowObj.toTimeString().split(' ')[0]; // 'HH:MM:SS'
+        const displayTime = formatTime12(nowTime);
 
+        // CASE 1: First time registration -> MUST ONLY mark Entrada!
+        if (isNew) {
+            await db.promise().query(
+                'INSERT INTO asistencias (id_profesor, fecha, hora_entrada) VALUES (?, ?, ?)',
+                [profesor.id, today, nowTime]
+            );
+            return res.status(200).json({
+                type: 'Entrada',
+                isNew: true,
+                profesor: {
+                    cedula,
+                    nombre: profesor.nombre,
+                    apellido: profesor.apellido
+                },
+                hora: displayTime,
+                message: `¡Registro completado exitosamente! Entrada marcada a las ${displayTime}.`
+            });
+        }
+
+        // CASE 2: Subsequent scans for existing professor
         const [attendanceResults] = await db.promise().query(
             'SELECT * FROM asistencias WHERE id_profesor = ? AND fecha = ?',
             [profesor.id, today]
@@ -149,46 +185,44 @@ router.post('/qr-scan', async (req, res) => {
                         nombre: profesor.nombre,
                         apellido: profesor.apellido
                     },
-                    horaEntrada: attendance.hora_entrada,
-                    horaSalida: attendance.hora_salida,
-                    message: `Ya has registrado tu entrada (${attendance.hora_entrada}) y salida (${attendance.hora_salida}) el día de hoy.`
+                    horaEntrada: formatTime12(attendance.hora_entrada),
+                    horaSalida: formatTime12(attendance.hora_salida),
+                    message: `Ya has completado tu jornada de hoy. Entrada: ${formatTime12(attendance.hora_entrada)} | Salida: ${formatTime12(attendance.hora_salida)}.`
                 });
             } else {
                 // Mark check out
                 await db.promise().query(
                     'UPDATE asistencias SET hora_salida = ? WHERE id = ?',
-                    [now, attendance.id]
+                    [nowTime, attendance.id]
                 );
                 return res.status(200).json({
                     type: 'Salida',
-                    isNew,
+                    isNew: false,
                     profesor: {
                         cedula,
                         nombre: profesor.nombre,
                         apellido: profesor.apellido
                     },
-                    hora: now,
-                    message: `¡Hasta luego! Salida registrada exitosamente.`
+                    hora: displayTime,
+                    message: `¡Hasta luego! Salida registrada a las ${displayTime}.`
                 });
             }
         } else {
-            // Mark check in
+            // First scan of the day -> Mark check in
             await db.promise().query(
                 'INSERT INTO asistencias (id_profesor, fecha, hora_entrada) VALUES (?, ?, ?)',
-                [profesor.id, today, now]
+                [profesor.id, today, nowTime]
             );
             return res.status(200).json({
                 type: 'Entrada',
-                isNew,
+                isNew: false,
                 profesor: {
                     cedula,
                     nombre: profesor.nombre,
                     apellido: profesor.apellido
                 },
-                hora: now,
-                message: isNew
-                    ? `¡Registro completado y Entrada marcada con éxito!`
-                    : `¡Bienvenido(a)! Entrada registrada con éxito.`
+                hora: displayTime,
+                message: `¡Bienvenido(a)! Entrada registrada a las ${displayTime}.`
             });
         }
     } catch (err) {
