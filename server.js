@@ -69,12 +69,12 @@ app.get('/api/network-ip', (req, res) => {
 const distPath = path.join(__dirname, 'client', 'dist');
 app.use(express.static(distPath));
 
-// For all non-API routes, send index.html (SPA routing)
-app.get('*', (req, res, next) => {
-    if (req.path.startsWith('/api')) {
-        return next();
+// For all non-API routes, send index.html (SPA routing compatible with Express 5)
+app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api')) {
+        return res.sendFile(path.join(distPath, 'index.html'));
     }
-    res.sendFile(path.join(distPath, 'index.html'));
+    next();
 });
 
 // Start server
