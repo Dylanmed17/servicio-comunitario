@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Attendance from './pages/Attendance';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import QrScan from './pages/QrScan';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -17,6 +18,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Attendance />} />
+                <Route path="/scan" element={<QrScan />} />
                 <Route path="/login" element={<Login />} />
                 <Route
                     path="/dashboard"

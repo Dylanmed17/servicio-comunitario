@@ -30,7 +30,7 @@ const Login = () => {
             <Card className="w-full max-w-md shadow-xl border-l-4 border-l-[#ED1C24]">
                 <CardHeader className="text-center">
                     <CardTitle className="text-2xl font-bold">Acceso Administrativo</CardTitle>
-                    <CardDescription>U.E.N. "Cardenal José Humberto Quintero"</CardDescription>
+                    <CardDescription>E.B.D. "José Antonio González"</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleLogin} className="space-y-4">

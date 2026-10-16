@@ -533,7 +533,7 @@ const Dashboard = () => {
                     <h2 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-[#ED1C24] to-red-400 bg-clip-text text-transparent">
                         DigitalCheck
                     </h2>
-                    <p className="text-xs text-gray-500 mt-1 font-medium">U.E.N. Cardenal Quintero</p>
+                    <p className="text-xs text-gray-500 mt-1 font-medium">E.B.D. José Antonio González</p>
                 </div>
                 
                 <div className="flex-1 py-6 px-4 space-y-2">
