@@ -10,4 +10,8 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
+    server: {
+        host: true, // Expose to local network (Wi-Fi) so phones can scan QR
+        port: 5173
+    }
 })

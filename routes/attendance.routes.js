@@ -108,12 +108,22 @@ router.post('/qr-scan', async (req, res) => {
             isNew = true;
 
             // Generate default Monday-Friday schedule
-            const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
-            for (const dia of dias) {
-                await db.promise().query(
-                    'INSERT INTO horarios (id_profesor, dia_semana, entrada_asignada, salida_asignada) VALUES (?, ?, ?, ?)',
-                    [profesor.id, dia, '07:00:00', '13:00:00']
-                );
+            try {
+                const dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
+                for (const dia of dias) {
+                    await db.promise().query(
+                        'INSERT INTO horarios (id_profesor, dia_semana, entrada_asignada, salida_asignada) VALUES (?, ?, ?, ?)',
+                        [profesor.id, dia, '07:00:00', '13:00:00']
+                    ).catch(async () => {
+                        // fallback with accent if DB schema requires Miércoles
+                        await db.promise().query(
+                            'INSERT INTO horarios (id_profesor, dia_semana, entrada_asignada, salida_asignada) VALUES (?, ?, ?, ?)',
+                            [profesor.id, dia === 'Miercoles' ? 'Miércoles' : dia, '07:00:00', '13:00:00']
+                        ).catch(() => {});
+                    });
+                }
+            } catch (scheduleErr) {
+                console.warn('Could not insert default schedule:', scheduleErr.message);
             }
         } else {
             profesor = profResults[0];
@@ -183,7 +193,10 @@ router.post('/qr-scan', async (req, res) => {
         }
     } catch (err) {
         console.error('Error in /qr-scan:', err);
-        return res.status(500).json({ error: err.message || 'Error del servidor al procesar escaneo.' });
+        return res.status(500).json({ 
+            message: err.message || 'Error del servidor al procesar escaneo.',
+            error: err.message || 'Error del servidor al procesar escaneo.'
+        });
     }
 });
 

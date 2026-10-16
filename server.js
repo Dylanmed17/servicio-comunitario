@@ -49,6 +49,21 @@ app.use('/api/personnel', personnelRoutes);
 // Stat route (protected)
 app.use('/api/dashboard', require('./routes/dashboard.routes'));
 
+// Network info endpoint (to provide LAN IP for QR codes)
+app.get('/api/network-ip', (req, res) => {
+    const interfaces = os.networkInterfaces();
+    let localIp = 'localhost';
+    for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal) {
+                localIp = iface.address;
+                break;
+            }
+        }
+    }
+    res.json({ ip: localIp });
+});
+
 // Start server
 // Start server
 app.listen(PORT, () => {

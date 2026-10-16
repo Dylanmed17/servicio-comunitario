@@ -16,15 +16,29 @@ const Attendance = () => {
     const [status, setStatus] = useState(''); // 'success' or 'error'
     const [loading, setLoading] = useState(false);
 
-    // QR Configuration
+    // QR Configuration & Auto Network IP Detection
+    const [networkIp, setNetworkIp] = useState('');
     const [customHost, setCustomHost] = useState('');
     const [showHostInput, setShowHostInput] = useState(false);
 
-    // Determine the base URL for the QR code
-    const currentOrigin = window.location.origin;
-    const scanUrl = customHost 
-        ? `${window.location.protocol}//${customHost}:5173/scan` 
-        : `${currentOrigin}/scan`;
+    useEffect(() => {
+        // Query backend for local network IP
+        const fetchNetworkIp = async () => {
+            try {
+                const res = await axios.get(`${window.location.protocol}//${window.location.hostname}:3000/api/network-ip`);
+                if (res.data && res.data.ip && res.data.ip !== 'localhost' && res.data.ip !== '127.0.0.1') {
+                    setNetworkIp(res.data.ip);
+                }
+            } catch (e) {
+                console.warn('Could not auto-detect network IP:', e.message);
+            }
+        };
+        fetchNetworkIp();
+    }, []);
+
+    // Determine the host for the QR code
+    const resolvedHost = customHost || networkIp || window.location.hostname || 'localhost';
+    const scanUrl = `${window.location.protocol}//${resolvedHost}:5173/scan`;
 
     const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(scanUrl)}&margin=8&color=111827`;
 
@@ -37,12 +51,13 @@ const Attendance = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:3000/api/attendance', { cedula });
+            const apiUrl = `${window.location.protocol}//${window.location.hostname}:3000/api/attendance`;
+            const response = await axios.post(apiUrl, { cedula });
             setMessage(response.data.message);
             setStatus('success');
             setCedula('');
         } catch (error) {
-            setMessage(error.response?.data?.message || 'Error al registrar asistencia');
+            setMessage(error.response?.data?.message || error.response?.data?.error || 'Error al registrar asistencia');
             setStatus('error');
         } finally {
             setLoading(false);
@@ -232,6 +247,11 @@ const Attendance = () => {
                                         className="w-56 h-56 object-contain rounded-lg"
                                     />
                                 </div>
+                            </div>
+
+                            {/* Direct URL info */}
+                            <div className="text-[11px] text-gray-500 bg-gray-50 py-1.5 px-3 rounded-full border border-gray-200/60 max-w-sm truncate">
+                                📱 Enlace: <span className="font-mono text-gray-800 font-semibold">{scanUrl}</span>
                             </div>
 
                             {/* Instructions List */}

@@ -41,11 +41,16 @@ const QrScan = () => {
         setIsChecking(false);
     }, []);
 
+    const getApiUrl = () => {
+        const hostname = window.location.hostname || 'localhost';
+        return `${window.location.protocol}//${hostname}:3000/api/attendance/qr-scan`;
+    };
+
     const autoMarkAttendance = async (cedula) => {
         setIsChecking(true);
         setErrorMsg('');
         try {
-            const res = await axios.post('http://localhost:3000/api/attendance/qr-scan', { cedula });
+            const res = await axios.post(getApiUrl(), { cedula });
             if (res.data.needsRegistration) {
                 // If not found in DB, clear localStorage and ask to register
                 localStorage.removeItem('docente_identidad');
@@ -64,7 +69,8 @@ const QrScan = () => {
                 }
             }
         } catch (err) {
-            setErrorMsg(err.response?.data?.message || 'Error al conectar con el servidor.');
+            console.error('Error auto-marking attendance:', err);
+            setErrorMsg(err.response?.data?.message || err.response?.data?.error || err.message || 'Error al conectar con el servidor.');
         } finally {
             setIsChecking(false);
         }
@@ -81,7 +87,7 @@ const QrScan = () => {
 
         setSubmitting(true);
         try {
-            const res = await axios.post('http://localhost:3000/api/attendance/qr-scan', {
+            const res = await axios.post(getApiUrl(), {
                 cedula: formData.cedula.trim(),
                 nombre: formData.nombre.trim(),
                 apellido: formData.apellido.trim()
@@ -99,7 +105,8 @@ const QrScan = () => {
 
             setResult(res.data);
         } catch (err) {
-            setErrorMsg(err.response?.data?.message || 'Error al registrar asistencia.');
+            console.error('Error registering attendance:', err);
+            setErrorMsg(err.response?.data?.message || err.response?.data?.error || err.message || 'Error al registrar asistencia.');
         } finally {
             setSubmitting(false);
         }
