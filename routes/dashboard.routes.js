@@ -16,11 +16,35 @@ const getDiaSemana = (dateObj = new Date()) => {
     return dias[dateObj.getDay()];
 };
 
+// Resolve date: use today if it has records, otherwise fallback to the most recent active date
+const resolveActiveDate = async (db, requestedDate) => {
+    if (requestedDate) return requestedDate;
+    const today = getLocalDateString();
+    try {
+        const [check] = await db.promise().query('SELECT COUNT(*) as count FROM asistencias WHERE fecha = ?', [today]);
+        if (check[0].count > 0) {
+            return today;
+        }
+        const [latest] = await db.promise().query('SELECT fecha FROM asistencias ORDER BY fecha DESC, id DESC LIMIT 1');
+        if (latest.length > 0 && latest[0].fecha) {
+            const d = new Date(latest[0].fecha);
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+        }
+    } catch (e) {
+        console.error('Error resolving active date:', e);
+    }
+    return today;
+};
+
 // 1. GET STATS (TOTAL, PRESENTES, AUSENTES, RETRASOS)
 router.get('/stats', verifyToken, async (req, res) => {
     const db = req.db;
-    const today = req.query.fecha || getLocalDateString();
-    const diaSemana = getDiaSemana(new Date());
+    const activeDate = await resolveActiveDate(db, req.query.fecha);
+    const dateObj = new Date(activeDate + 'T12:00:00');
+    const diaSemana = getDiaSemana(dateObj);
     const diaSemanaAlt = diaSemana === 'Miercoles' ? 'Miércoles' : (diaSemana === 'Sabado' ? 'Sábado' : diaSemana);
 
     try {
@@ -30,7 +54,7 @@ router.get('/stats', verifyToken, async (req, res) => {
             FROM asistencias a 
             LEFT JOIN horarios h ON a.id_profesor = h.id_profesor AND (h.dia_semana = ? OR h.dia_semana = ?)
             WHERE a.fecha = ?
-        `, [diaSemana, diaSemanaAlt, today]);
+        `, [diaSemana, diaSemanaAlt, activeDate]);
 
         let present = 0;
         let retrasos = 0;
@@ -49,6 +73,7 @@ router.get('/stats', verifyToken, async (req, res) => {
         const absent = Math.max(0, total - present);
 
         res.status(200).json({
+            fecha: activeDate,
             total,
             present,
             absent,
@@ -63,8 +88,9 @@ router.get('/stats', verifyToken, async (req, res) => {
 // 2. GET TODAY'S ATTENDANCE (TIMELINE)
 router.get('/attendances/today', verifyToken, async (req, res) => {
     const db = req.db;
-    const today = req.query.fecha || getLocalDateString();
-    const diaSemana = getDiaSemana(new Date());
+    const activeDate = await resolveActiveDate(db, req.query.fecha);
+    const dateObj = new Date(activeDate + 'T12:00:00');
+    const diaSemana = getDiaSemana(dateObj);
     const diaSemanaAlt = diaSemana === 'Miercoles' ? 'Miércoles' : (diaSemana === 'Sabado' ? 'Sábado' : diaSemana);
 
     try {
@@ -84,7 +110,7 @@ router.get('/attendances/today', verifyToken, async (req, res) => {
             WHERE a.fecha = ?
             ORDER BY a.hora_entrada DESC
         `;
-        const [results] = await db.promise().query(query, [diaSemana, diaSemanaAlt, today]);
+        const [results] = await db.promise().query(query, [diaSemana, diaSemanaAlt, activeDate]);
 
         const formatTime = (timeStr) => {
             if (!timeStr) return null;
