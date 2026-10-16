@@ -42,8 +42,10 @@ const QrScan = () => {
     }, []);
 
     const getApiUrl = () => {
-        const hostname = window.location.hostname || 'localhost';
-        return `${window.location.protocol}//${hostname}:3000/api/attendance/qr-scan`;
+        if (window.location.port === '5173') {
+            return `${window.location.protocol}//${window.location.hostname}:3000/api/attendance/qr-scan`;
+        }
+        return `${window.location.origin}/api/attendance/qr-scan`;
     };
 
     const autoMarkAttendance = async (cedula) => {

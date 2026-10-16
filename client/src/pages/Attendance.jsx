@@ -25,7 +25,10 @@ const Attendance = () => {
         // Query backend for local network IP
         const fetchNetworkIp = async () => {
             try {
-                const res = await axios.get(`${window.location.protocol}//${window.location.hostname}:3000/api/network-ip`);
+                const apiBase = window.location.port === '5173'
+                    ? `${window.location.protocol}//${window.location.hostname}:3000/api`
+                    : `${window.location.origin}/api`;
+                const res = await axios.get(`${apiBase}/network-ip`);
                 if (res.data && res.data.ip && res.data.ip !== 'localhost' && res.data.ip !== '127.0.0.1') {
                     setNetworkIp(res.data.ip);
                 }
@@ -37,9 +40,14 @@ const Attendance = () => {
     }, []);
 
     // Determine the host and port for the QR code
-    const resolvedHost = customHost || networkIp || window.location.hostname || 'localhost';
-    const currentPort = window.location.port ? `:${window.location.port}` : '';
-    const scanUrl = `${window.location.protocol}//${resolvedHost}${currentPort}/scan`;
+    let scanUrl = `${window.location.origin}/scan`;
+    if (customHost) {
+        scanUrl = customHost.startsWith('http') ? `${customHost}/scan` : `http://${customHost}:3000/scan`;
+    } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        if (networkIp) {
+            scanUrl = `http://${networkIp}:3000/scan`;
+        }
+    }
 
     const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(scanUrl)}&margin=8&color=111827`;
 
@@ -52,8 +60,10 @@ const Attendance = () => {
 
         setLoading(true);
         try {
-            const apiUrl = `${window.location.protocol}//${window.location.hostname}:3000/api/attendance`;
-            const response = await axios.post(apiUrl, { cedula });
+            const apiBase = window.location.port === '5173'
+                ? `${window.location.protocol}//${window.location.hostname}:3000/api`
+                : `${window.location.origin}/api`;
+            const response = await axios.post(`${apiBase}/attendance`, { cedula });
             setMessage(response.data.message);
             setStatus('success');
             setCedula('');

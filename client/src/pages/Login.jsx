@@ -16,7 +16,9 @@ const Login = () => {
         e.preventDefault();
         setError('');
         try {
-            const apiBase = `${window.location.protocol}//${window.location.hostname}:3000/api`;
+            const apiBase = window.location.port === '5173'
+                ? `${window.location.protocol}//${window.location.hostname}:3000/api`
+                : `${window.location.origin}/api`;
             const response = await axios.post(`${apiBase}/auth/login`, { username, password });
             localStorage.setItem('token', response.data.accessToken);
             localStorage.setItem('user', JSON.stringify(response.data));
