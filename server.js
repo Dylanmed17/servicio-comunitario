@@ -64,6 +64,14 @@ app.get('/api/network-ip', (req, res) => {
     res.json({ ip: localIp });
 });
 
+// Helper redirect for mobile devices reaching port 3000
+app.get('/scan', (req, res) => {
+    res.redirect(`http://${req.hostname}:5173/scan`);
+});
+app.get('/', (req, res) => {
+    res.redirect(`http://${req.hostname}:5173/`);
+});
+
 // Start server
 // Start server
 app.listen(PORT, () => {
