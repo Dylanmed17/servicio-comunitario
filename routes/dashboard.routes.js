@@ -2,21 +2,35 @@ const express = require('express');
 const router = express.Router();
 const verifyToken = require('../middleware/auth.middleware');
 
+// Helper to get local date in YYYY-MM-DD
+const getLocalDateString = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+
+const getDiaSemana = (dateObj = new Date()) => {
+    const dias = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+    return dias[dateObj.getDay()];
+};
+
 // 1. GET STATS (TOTAL, PRESENTES, AUSENTES, RETRASOS)
 router.get('/stats', verifyToken, async (req, res) => {
     const db = req.db;
-    // const today = new Date().toISOString().split('T')[0]; // Current date
-    // PARA PRUEBAS usar la última fecha del seed (9 de Marzo de 2026) o fecha actual si hay datos
-    const today = '2026-03-09';
+    const today = req.query.fecha || getLocalDateString();
+    const diaSemana = getDiaSemana(new Date());
+    const diaSemanaAlt = diaSemana === 'Miercoles' ? 'Miércoles' : (diaSemana === 'Sabado' ? 'Sábado' : diaSemana);
 
     try {
         const [totalResult] = await db.promise().query('SELECT COUNT(*) as total FROM profesores');
         const [presentResult] = await db.promise().query(`
-            SELECT a.*, h.entrada_asignada 
+            SELECT a.*, COALESCE(h.entrada_asignada, '07:00:00') as entrada_asignada 
             FROM asistencias a 
-            JOIN horarios h ON a.id_profesor = h.id_profesor AND h.dia_semana = 'Lunes' 
+            LEFT JOIN horarios h ON a.id_profesor = h.id_profesor AND (h.dia_semana = ? OR h.dia_semana = ?)
             WHERE a.fecha = ?
-        `, [today]); // MONDAY for March 9, 2026 hardcoded or dynamic based on date
+        `, [diaSemana, diaSemanaAlt, today]);
 
         let present = 0;
         let retrasos = 0;
@@ -32,7 +46,7 @@ router.get('/stats', verifyToken, async (req, res) => {
         });
 
         const total = totalResult[0].total;
-        const absent = total - present;
+        const absent = Math.max(0, total - present);
 
         res.status(200).json({
             total,
@@ -49,7 +63,10 @@ router.get('/stats', verifyToken, async (req, res) => {
 // 2. GET TODAY'S ATTENDANCE (TIMELINE)
 router.get('/attendances/today', verifyToken, async (req, res) => {
     const db = req.db;
-    const today = '2026-03-09';
+    const today = req.query.fecha || getLocalDateString();
+    const diaSemana = getDiaSemana(new Date());
+    const diaSemanaAlt = diaSemana === 'Miercoles' ? 'Miércoles' : (diaSemana === 'Sabado' ? 'Sábado' : diaSemana);
+
     try {
         const query = `
             SELECT 
@@ -59,15 +76,15 @@ router.get('/attendances/today', verifyToken, async (req, res) => {
                 p.cedula,
                 a.hora_entrada, 
                 a.hora_salida, 
-                h.entrada_asignada,
+                COALESCE(h.entrada_asignada, '07:00:00') as entrada_asignada,
                 a.observaciones
             FROM asistencias a
             JOIN profesores p ON a.id_profesor = p.id
-            LEFT JOIN horarios h ON a.id_profesor = h.id_profesor AND h.dia_semana = 'Lunes'
+            LEFT JOIN horarios h ON a.id_profesor = h.id_profesor AND (h.dia_semana = ? OR h.dia_semana = ?)
             WHERE a.fecha = ?
             ORDER BY a.hora_entrada DESC
         `;
-        const [results] = await db.promise().query(query, [today]);
+        const [results] = await db.promise().query(query, [diaSemana, diaSemanaAlt, today]);
 
         const formatTime = (timeStr) => {
             if (!timeStr) return null;

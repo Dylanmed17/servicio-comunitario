@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { CheckCircle2, Clock, UserCheck, QrCode, AlertCircle, RefreshCw } from 'lucide-react';
+import { CheckCircle2, Clock, UserCheck, QrCode, AlertCircle, RefreshCw, ArrowLeft } from 'lucide-react';
 
 const QrScan = () => {
     const [savedDocente, setSavedDocente] = useState(null);
@@ -188,12 +188,18 @@ const QrScan = () => {
 
                         <CardFooter className="flex flex-col gap-2 p-6 pt-0 border-t border-gray-50">
                             <Button 
+                                className="w-full bg-[#ED1C24] hover:bg-[#c4161c] text-white py-5 font-semibold text-sm shadow-md transition-all"
+                                onClick={() => setResult(null)}
+                            >
+                                <ArrowLeft className="w-4 h-4 mr-2" /> Volver / Listo
+                            </Button>
+                            <Button 
                                 variant="outline" 
                                 size="sm" 
                                 className="w-full text-xs text-gray-500 hover:text-gray-700"
                                 onClick={() => autoMarkAttendance(result.profesor?.cedula)}
                             >
-                                <RefreshCw className="w-3.5 h-3.5 mr-1" /> Re-verificar / Actualizar
+                                <RefreshCw className="w-3.5 h-3.5 mr-1" /> Re-verificar marcaje
                             </Button>
                             <button
                                 onClick={handleResetIdentity}
@@ -205,8 +211,58 @@ const QrScan = () => {
                     </Card>
                 )}
 
-                {/* 3. First-time Registration Form View */}
-                {!isChecking && !result && (
+                {/* 3. Existing User Ready Card (when user clicks Volver or is ready to mark) */}
+                {!isChecking && !result && savedDocente && (
+                    <Card className="shadow-xl border border-gray-100 bg-white rounded-xl overflow-hidden animate-in fade-in">
+                        <CardHeader className="text-center bg-gradient-to-b from-gray-50 to-white pb-6 border-b border-gray-100">
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-50 text-[#ED1C24] mb-2 mx-auto">
+                                <UserCheck className="w-6 h-6" />
+                            </div>
+                            <CardTitle className="text-xl font-bold text-gray-800">
+                                ¡Hola, {savedDocente.nombre}!
+                            </CardTitle>
+                            <CardDescription className="text-xs text-gray-500 font-mono">
+                                Cédula: {savedDocente.cedula}
+                            </CardDescription>
+                            <div className="mt-3 bg-green-50 text-green-700 text-xs p-2 rounded-lg border border-green-100">
+                                Dispositivo vinculado correctamente
+                            </div>
+                        </CardHeader>
+
+                        <CardContent className="p-6 space-y-4">
+                            {errorMsg && (
+                                <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 flex items-start">
+                                    <AlertCircle className="w-4 h-4 mr-2 shrink-0 mt-0.5" />
+                                    <span>{errorMsg}</span>
+                                </div>
+                            )}
+
+                            <p className="text-xs text-gray-500 text-center">
+                                Pulsa el botón para registrar tu salida o actualizar tu asistencia en la <strong>E.B.D. "José Antonio González"</strong>:
+                            </p>
+
+                            <Button
+                                onClick={() => autoMarkAttendance(savedDocente.cedula)}
+                                className="w-full bg-[#ED1C24] hover:bg-[#c4161c] text-white py-6 font-semibold text-sm shadow-md flex items-center justify-center"
+                            >
+                                <Clock className="w-4 h-4 mr-2" />
+                                Marcar Salida / Actualizar Asistencia
+                            </Button>
+                        </CardContent>
+
+                        <CardFooter className="flex flex-col gap-2 p-6 pt-0 border-t border-gray-50 text-center">
+                            <button
+                                onClick={handleResetIdentity}
+                                className="text-xs text-gray-400 hover:text-[#ED1C24] underline pt-2 cursor-pointer"
+                            >
+                                ¿No eres tú? Cambiar de usuario o cédula
+                            </button>
+                        </CardFooter>
+                    </Card>
+                )}
+
+                {/* 4. First-time Registration Form View (only if no saved identity) */}
+                {!isChecking && !result && !savedDocente && (
                     <Card className="shadow-xl border border-gray-100 bg-white rounded-xl overflow-hidden">
                         <CardHeader className="text-center bg-gradient-to-b from-gray-50 to-white pb-6 border-b border-gray-100">
                             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-50 text-[#ED1C24] mb-2 mx-auto">

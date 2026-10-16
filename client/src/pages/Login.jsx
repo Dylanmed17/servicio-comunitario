@@ -59,9 +59,7 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <div className="text-xs text-gray-500 bg-gray-50 p-2.5 rounded-md border border-gray-100 text-center">
-                            Credenciales iniciales: <strong className="font-mono text-gray-700">admin</strong> / <strong className="font-mono text-gray-700">password123</strong>
-                        </div>
+
                         {error && (
                             <div className="p-3 rounded-md text-sm font-medium bg-red-100 text-red-700">
                                 {error}
