@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { QrCode, Keyboard, ExternalLink, Printer, CheckCircle2, AlertCircle, Sparkles, Smartphone, ShieldCheck } from 'lucide-react';
+import { QRCodeSVG, QRCodeCanvas } from 'qrcode.react';
 
 const Attendance = () => {
     // Mode: 'qr' | 'manual'
@@ -49,8 +50,6 @@ const Attendance = () => {
         }
     }
 
-    const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(scanUrl)}&margin=8&color=111827`;
-
     const handleManualAttendance = async (e) => {
         e.preventDefault();
         setMessage('');
@@ -76,6 +75,9 @@ const Attendance = () => {
     };
 
     const handlePrintPoster = () => {
+        const canvas = document.getElementById('attendance-offline-canvas');
+        const printQrSrc = canvas ? canvas.toDataURL('image/png') : '';
+
         const printWindow = window.open('', '_blank');
         if (!printWindow) {
             alert('Por favor permita ventanas emergentes para imprimir el cartel.');
@@ -176,7 +178,7 @@ const Attendance = () => {
                     <h2>Control Inteligente de Entrada y Salida</h2>
 
                     <div class="qr-container">
-                        <img src="${qrImageUrl}" alt="Código QR de Asistencia" />
+                        <img src="${printQrSrc}" alt="Código QR de Asistencia" />
                     </div>
 
                     <div class="instructions">
@@ -251,11 +253,19 @@ const Attendance = () => {
                         <div className="flex flex-col items-center text-center space-y-5 animate-in fade-in duration-200">
                             {/* QR Frame */}
                             <div className="p-3 bg-white rounded-2xl border-2 border-dashed border-[#ED1C24]/30 shadow-inner group hover:border-[#ED1C24] transition-all">
-                                <div className="p-2 bg-white rounded-xl shadow-sm border border-gray-100">
-                                    <img 
-                                        src={qrImageUrl} 
-                                        alt="Código QR de Asistencia" 
-                                        className="w-56 h-56 object-contain rounded-lg"
+                                <div className="p-3 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center">
+                                    <QRCodeSVG 
+                                        value={scanUrl} 
+                                        size={224} 
+                                        level="M" 
+                                        includeMargin={false}
+                                        className="rounded-lg"
+                                    />
+                                    <QRCodeCanvas 
+                                        id="attendance-offline-canvas"
+                                        value={scanUrl}
+                                        size={280}
+                                        style={{ display: 'none' }}
                                     />
                                 </div>
                             </div>
