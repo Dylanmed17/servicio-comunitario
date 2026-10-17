@@ -42,7 +42,8 @@ const QrScan = () => {
     }, []);
 
     const getApiUrl = () => {
-        if (window.location.port === '5173') {
+        const port = window.location.port;
+        if (port && port !== '3000') {
             return `${window.location.protocol}//${window.location.hostname}:3000/api/attendance/qr-scan`;
         }
         return `${window.location.origin}/api/attendance/qr-scan`;

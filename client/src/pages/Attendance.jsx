@@ -26,7 +26,8 @@ const Attendance = () => {
         // Query backend for local network IP
         const fetchNetworkIp = async () => {
             try {
-                const apiBase = window.location.port === '5173'
+                const port = window.location.port;
+                const apiBase = (port && port !== '3000')
                     ? `${window.location.protocol}//${window.location.hostname}:3000/api`
                     : `${window.location.origin}/api`;
                 const res = await axios.get(`${apiBase}/network-ip`);
@@ -59,7 +60,8 @@ const Attendance = () => {
 
         setLoading(true);
         try {
-            const apiBase = window.location.port === '5173'
+            const port = window.location.port;
+            const apiBase = (port && port !== '3000')
                 ? `${window.location.protocol}//${window.location.hostname}:3000/api`
                 : `${window.location.origin}/api`;
             const response = await axios.post(`${apiBase}/attendance`, { cedula });

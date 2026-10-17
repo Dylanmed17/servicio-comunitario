@@ -16,7 +16,8 @@ const Login = () => {
         e.preventDefault();
         setError('');
         try {
-            const apiBase = window.location.port === '5173'
+            const port = window.location.port;
+            const apiBase = (port && port !== '3000')
                 ? `${window.location.protocol}//${window.location.hostname}:3000/api`
                 : `${window.location.origin}/api`;
             const response = await axios.post(`${apiBase}/auth/login`, { username, password });

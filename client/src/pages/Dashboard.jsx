@@ -59,7 +59,8 @@ const Dashboard = () => {
 
     const token = localStorage.getItem('token');
     const authHeader = { headers: { Authorization: `Bearer ${token}` } };
-    const API_BASE = window.location.port === '5173'
+    const port = window.location.port;
+    const API_BASE = (port && port !== '3000')
         ? `${window.location.protocol}//${window.location.hostname}:3000/api`
         : `${window.location.origin}/api`;
 
