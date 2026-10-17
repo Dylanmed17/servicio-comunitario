@@ -7,7 +7,15 @@ echo =====================================================================
 echo.
 cd /d "%~dp0"
 
-echo [1/2] Iniciando Servidor Principal...
+echo [0/3] Verificando Base de Datos MySQL...
+netstat -ano | findstr :3306 >nul
+if errorlevel 1 (
+    echo Iniciando MySQL de XAMPP...
+    start /min "MySQL" cmd /c "cd /d C:\xampp && mysql\bin\mysqld --defaults-file=mysql\bin\my.ini --standalone"
+    timeout /t 3 >nul
+)
+
+echo [1/3] Iniciando Servidor Principal...
 start "Servidor Asistencia (Puerto 3000)" cmd /k "node server.js"
 
 timeout /t 3 >nul
